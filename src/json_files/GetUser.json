@@ -1,0 +1,6 @@
+{
+    "username": "Tester4000",
+    "email": "atru@ruc.dk",
+    "birthyear": "1998",
+    "bookmarksUrl": "https://localhost:5001/api/user/bookmarks"
+}

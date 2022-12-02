@@ -1,0 +1,872 @@
+{
+    "title": "The Twilight Zone",
+    "titleUrl": "https://localhost:5001/api/title/tt0052520",
+    "personsList": [
+        {
+            "name": "Richard Donner",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 8.7,
+            "personUrl": "https://localhost:5001/api/person/nm0001149"
+        },
+        {
+            "name": "Jack Klugman",
+            "productionRole": "actor",
+            "characterList": [
+                {
+                    "character": "Joey Crown"
+                },
+                {
+                    "character": "Jesse Cardiff"
+                },
+                {
+                    "character": "Captain Ross"
+                }
+            ],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0001430"
+        },
+        {
+            "name": "Ray Bradbury",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 8.2,
+            "personUrl": "https://localhost:5001/api/person/nm0001969"
+        },
+        {
+            "name": "Jerome Bixby",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 8.2,
+            "personUrl": "https://localhost:5001/api/person/nm0003198"
+        },
+        {
+            "name": "Justus Addiss",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0011727"
+        },
+        {
+            "name": "John Anderson",
+            "productionRole": "actor",
+            "characterList": [
+                {
+                    "character": "Capt. Skipper Farver"
+                },
+                {
+                    "character": "Deidrich"
+                },
+                {
+                    "character": "Gabriel"
+                }
+            ],
+            "popularity": 8.9,
+            "personUrl": "https://localhost:5001/api/person/nm0026930"
+        },
+        {
+            "name": "David Armstrong",
+            "productionRole": "actor",
+            "characterList": [
+                {
+                    "character": "Passenger"
+                },
+                {
+                    "character": "Surgeon"
+                },
+                {
+                    "character": "Security Guard"
+                }
+            ],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0035675"
+        },
+        {
+            "name": "William Asher",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0038906"
+        },
+        {
+            "name": "Richard L. Bare",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 8.9,
+            "personUrl": "https://localhost:5001/api/person/nm0054374"
+        },
+        {
+            "name": "Charles Beaumont",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 8.5,
+            "personUrl": "https://localhost:5001/api/person/nm0064579"
+        },
+        {
+            "name": "Abner Biberman",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0080867"
+        },
+        {
+            "name": "Ambrose Bierce",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm0081549"
+        },
+        {
+            "name": "John Brahm",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 8.7,
+            "personUrl": "https://localhost:5001/api/person/nm0103975"
+        },
+        {
+            "name": "David Butler",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0124877"
+        },
+        {
+            "name": "Robert Butler",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0125111"
+        },
+        {
+            "name": "Bennett Cerf",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm0148569"
+        },
+        {
+            "name": "William F. Claxton",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 8.9,
+            "personUrl": "https://localhost:5001/api/person/nm0165493"
+        },
+        {
+            "name": "John Collier",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0171924"
+        },
+        {
+            "name": "Alan Crosland Jr.",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0189075"
+        },
+        {
+            "name": "Price Day",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0206546"
+        },
+        {
+            "name": "Richard De Roy",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm0211315"
+        },
+        {
+            "name": "Cyril Delevanti",
+            "productionRole": "actor",
+            "characterList": [
+                {
+                    "character": "Franklin"
+                },
+                {
+                    "character": "Bank customer"
+                },
+                {
+                    "character": "L.J. Smithers"
+                }
+            ],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0216819"
+        },
+        {
+            "name": "Robert Enrico",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm0257992"
+        },
+        {
+            "name": "Robert Enrico",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm0257992"
+        },
+        {
+            "name": "Paul W. Fairman",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm0265640"
+        },
+        {
+            "name": "Lucille Fletcher",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm0282061"
+        },
+        {
+            "name": "Robert Florey",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 8.9,
+            "personUrl": "https://localhost:5001/api/person/nm0282984"
+        },
+        {
+            "name": "Frederick Louis Fox",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0288996"
+        },
+        {
+            "name": "John Furia",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm0298891"
+        },
+        {
+            "name": "Alvin Ganzer",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 8.9,
+            "personUrl": "https://localhost:5001/api/person/nm0304681"
+        },
+        {
+            "name": "Bernard Girard",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm0320637"
+        },
+        {
+            "name": "Robert Gist",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm0321143"
+        },
+        {
+            "name": "Martin Goldsmith",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0326107"
+        },
+        {
+            "name": "Walter Grauman",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm0336139"
+        },
+        {
+            "name": "David Greene",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm0338719"
+        },
+        {
+            "name": "Earl Hamner Jr.",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 8.8,
+            "personUrl": "https://localhost:5001/api/person/nm0358839"
+        },
+        {
+            "name": "Douglas Heyes",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 8.1,
+            "personUrl": "https://localhost:5001/api/person/nm0382227"
+        },
+        {
+            "name": "Lou Holtz",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm0392662"
+        },
+        {
+            "name": "Bill Idelson",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm0406857"
+        },
+        {
+            "name": "George Clayton Johnson",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 8.7,
+            "personUrl": "https://localhost:5001/api/person/nm0425138"
+        },
+        {
+            "name": "Lamont Johnson",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 8.9,
+            "personUrl": "https://localhost:5001/api/person/nm0425593"
+        },
+        {
+            "name": "Roger Kay",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm0443170"
+        },
+        {
+            "name": "Damon Knight",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm0460856"
+        },
+        {
+            "name": "Buzz Kulik",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 8.7,
+            "personUrl": "https://localhost:5001/api/person/nm0474539"
+        },
+        {
+            "name": "Henry Kuttner",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm0476565"
+        },
+        {
+            "name": "Perry Lafferty",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0480807"
+        },
+        {
+            "name": "Anton Leader",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0494903"
+        },
+        {
+            "name": "Mitchell Leisen",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 8.9,
+            "personUrl": "https://localhost:5001/api/person/nm0500552"
+        },
+        {
+            "name": "Ida Lupino",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm0526946"
+        },
+        {
+            "name": "Richard Matheson",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 8.3,
+            "personUrl": "https://localhost:5001/api/person/nm0558577"
+        },
+        {
+            "name": "Robert McCord",
+            "productionRole": "actor",
+            "characterList": [
+                {
+                    "character": "Waiter"
+                },
+                {
+                    "character": "1st Fireman"
+                },
+                {
+                    "character": "Bearded Guard with Priest"
+                }
+            ],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm0566389"
+        },
+        {
+            "name": "David Orrick McDearmon",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 8.9,
+            "personUrl": "https://localhost:5001/api/person/nm0567471"
+        },
+        {
+            "name": "Richard P. McDonagh",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0567613"
+        },
+        {
+            "name": "Norman Z. McLeod",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0572851"
+        },
+        {
+            "name": "Jerry McNeely",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm0573845"
+        },
+        {
+            "name": "Don Medford",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 8.9,
+            "personUrl": "https://localhost:5001/api/person/nm0575546"
+        },
+        {
+            "name": "Burgess Meredith",
+            "productionRole": "actor",
+            "characterList": [
+                {
+                    "character": "Mr. Smith"
+                },
+                {
+                    "character": "Luther Dingle"
+                },
+                {
+                    "character": "Henry Bemis"
+                }
+            ],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0580565"
+        },
+        {
+            "name": "Robert Ellis Miller",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm0589228"
+        },
+        {
+            "name": "Allen H. Miner",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm0591142"
+        },
+        {
+            "name": "C.L. Moore",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm0600987"
+        },
+        {
+            "name": "Ralph Nelson",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm0625680"
+        },
+        {
+            "name": "E. Jack Neuman",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0626981"
+        },
+        {
+            "name": "Joseph M. Newman",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 8.9,
+            "personUrl": "https://localhost:5001/api/person/nm0628149"
+        },
+        {
+            "name": "Christian Nyby",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0638528"
+        },
+        {
+            "name": "Robert Parrish",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 8.9,
+            "personUrl": "https://localhost:5001/api/person/nm0663577"
+        },
+        {
+            "name": "Montgomery Pittman",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0685957"
+        },
+        {
+            "name": "Montgomery Pittman",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0685957"
+        },
+        {
+            "name": "Ted Post",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0692872"
+        },
+        {
+            "name": "Robert Presnell Jr.",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0696189"
+        },
+        {
+            "name": "Allen Reisner",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0718467"
+        },
+        {
+            "name": "David Lowell Rich",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm0723629"
+        },
+        {
+            "name": "John Rich",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0723664"
+        },
+        {
+            "name": "Oceo Ritch",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0728507"
+        },
+        {
+            "name": "Sam Rolfe",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm0738222"
+        },
+        {
+            "name": "Reginald Rose",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 8.8,
+            "personUrl": "https://localhost:5001/api/person/nm0741627"
+        },
+        {
+            "name": "Stuart Rosenberg",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0742341"
+        },
+        {
+            "name": "Boris Sagal",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0755963"
+        },
+        {
+            "name": "Richard C. Sarafian",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm0764781"
+        },
+        {
+            "name": "Bernard C. Schoenfeld",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0774441"
+        },
+        {
+            "name": "Harold D. Schuster",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm0776838"
+        },
+        {
+            "name": "Ralph Senensky",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm0784198"
+        },
+        {
+            "name": "Rod Serling",
+            "productionRole": "actor",
+            "characterList": [
+                {
+                    "character": "Narrator"
+                },
+                {
+                    "character": "Self - Host & Narrator"
+                },
+                {
+                    "character": "Self - Host"
+                }
+            ],
+            "popularity": 8.3,
+            "personUrl": "https://localhost:5001/api/person/nm0785245"
+        },
+        {
+            "name": "Rod Serling",
+            "productionRole": "writer",
+            "characterList": [
+                {
+                    "character": "Narrator"
+                },
+                {
+                    "character": "Self - Host & Narrator"
+                },
+                {
+                    "character": "Self - Host"
+                }
+            ],
+            "popularity": 8.3,
+            "personUrl": "https://localhost:5001/api/person/nm0785245"
+        },
+        {
+            "name": "James Sheldon",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 8.9,
+            "personUrl": "https://localhost:5001/api/person/nm0791027"
+        },
+        {
+            "name": "Don Siegel",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0796923"
+        },
+        {
+            "name": "Elliot Silverstein",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0799033"
+        },
+        {
+            "name": "Henry Slesar",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 8.9,
+            "personUrl": "https://localhost:5001/api/person/nm0805748"
+        },
+        {
+            "name": "Jack Smight",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 8.9,
+            "personUrl": "https://localhost:5001/api/person/nm0806915"
+        },
+        {
+            "name": "Jerry Sohl",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0812257"
+        },
+        {
+            "name": "Robert Stevens",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0828720"
+        },
+        {
+            "name": "Paul Stewart",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm0829717"
+        },
+        {
+            "name": "Adele T. Strassfield",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm0833511"
+        },
+        {
+            "name": "Vaughn Taylor",
+            "productionRole": "actor",
+            "characterList": [
+                {
+                    "character": "Mr. Maitland"
+                },
+                {
+                    "character": "Mr. Carsville"
+                },
+                {
+                    "character": "Mr. Judson"
+                }
+            ],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0853299"
+        },
+        {
+            "name": "John Tomerlin",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm0866634"
+        },
+        {
+            "name": "Jacques Tourneur",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm0869664"
+        },
+        {
+            "name": "James Turley",
+            "productionRole": "actor",
+            "characterList": [
+                {
+                    "character": "2nd Fireman"
+                },
+                {
+                    "character": "Club Member"
+                },
+                {
+                    "character": "Carstairs"
+                }
+            ],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm0877244"
+        },
+        {
+            "name": "Don Weis",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm0918659"
+        },
+        {
+            "name": "Manly Wade Wellman",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0920063"
+        },
+        {
+            "name": "Anthony Wilson",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0933016"
+        },
+        {
+            "name": "Ron Winston",
+            "productionRole": "director",
+            "characterList": [],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm0935636"
+        },
+        {
+            "name": "Jay Overholts",
+            "productionRole": "actor",
+            "characterList": [
+                {
+                    "character": "Doctor"
+                },
+                {
+                    "character": "Intern"
+                },
+                {
+                    "character": "Cowboy #2"
+                }
+            ],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm1031805"
+        },
+        {
+            "name": "Madelon Champion",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9,
+            "personUrl": "https://localhost:5001/api/person/nm1039635"
+        },
+        {
+            "name": "Mike Korologos",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm1040542"
+        },
+        {
+            "name": "Marvin Petal",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm1041186"
+        },
+        {
+            "name": "Michael D. Rosenthal",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm1041366"
+        },
+        {
+            "name": "Lee Polk",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm1042595"
+        },
+        {
+            "name": "Malcolm Jameson",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm1044445"
+        },
+        {
+            "name": "Lynn Venable",
+            "productionRole": "writer",
+            "characterList": [],
+            "popularity": 9.1,
+            "personUrl": "https://localhost:5001/api/person/nm1044475"
+        }
+    ]
+}

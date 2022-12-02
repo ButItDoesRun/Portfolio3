@@ -1,0 +1,70 @@
+{
+    "first": "https://localhost:5001/api/user/history?page=0&pageSize=20",
+    "prev": null,
+    "next": null,
+    "current": "https://localhost:5001/api/user/history?page=0&pageSize=20",
+    "total": 12,
+    "pages": 1,
+    "items": [
+        {
+            "date": "14-11-2022 00:00:00",
+            "content": "drama,fantasy,romance",
+            "url": "https://localhost:5001/api/search/genres/drama,fantasy,romance"
+        },
+        {
+            "date": "14-11-2022 00:00:00",
+            "content": "drama,fantasy,romance,horror",
+            "url": "https://localhost:5001/api/search/genres/drama,fantasy,romance,horror"
+        },
+        {
+            "date": "14-11-2022 00:00:00",
+            "content": "drama,romance,horror",
+            "url": "https://localhost:5001/api/search/genres/drama,romance,horror"
+        },
+        {
+            "date": "14-11-2022 00:00:00",
+            "content": "johan",
+            "url": "https://localhost:5001/api/search/actors/johan"
+        },
+        {
+            "date": "14-11-2022 00:00:00",
+            "content": "scarlett avengers civil war",
+            "url": "https://localhost:5001/api/search/titles/scarlett%20avengers%20civil%20war"
+        },
+        {
+            "date": "14-11-2022 00:00:00",
+            "content": "scarlett avengers civil war",
+            "url": "https://localhost:5001/api/search/titles/scarlett%20avengers%20civil%20war"
+        },
+        {
+            "date": "14-11-2022 00:00:00",
+            "content": "scarlet",
+            "url": "https://localhost:5001/api/search/actors/scarlet"
+        },
+        {
+            "date": "14-11-2022 00:00:00",
+            "content": "scarlett avengers civil war",
+            "url": "https://localhost:5001/api/search/titles/scarlett%20avengers%20civil%20war"
+        },
+        {
+            "date": "23-11-2022 00:00:00",
+            "content": "scarlett avengers civil war",
+            "url": "https://localhost:5001/api/search/titles/scarlett%20avengers%20civil%20war"
+        },
+        {
+            "date": "23-11-2022 00:00:00",
+            "content": "scarlett avengers civil war",
+            "url": "https://localhost:5001/api/search/titles/scarlett%20avengers%20civil%20war"
+        },
+        {
+            "date": "23-11-2022 00:00:00",
+            "content": "fantasy,horror,drama",
+            "url": "https://localhost:5001/api/search/genres/fantasy,horror,drama"
+        },
+        {
+            "date": "23-11-2022 00:00:00",
+            "content": "fantasy,horror,drama",
+            "url": "https://localhost:5001/api/search/genres/fantasy,horror,drama"
+        }
+    ]
+}

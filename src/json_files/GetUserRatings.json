@@ -1,0 +1,15 @@
+{
+    "first": "https://localhost:5001/api/user/ratings?page=0&pageSize=20",
+    "prev": null,
+    "next": null,
+    "current": "https://localhost:5001/api/user/ratings?page=0&pageSize=20",
+    "total": 1,
+    "pages": 1,
+    "items": [
+        {
+            "title": "The Twilight Zone",
+            "rating": 8,
+            "url": "https://localhost:5001/api/title/tt0052520"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "first": "https://localhost:5001/api/user/bookmarks?page=0&pageSize=20",
+    "prev": null,
+    "next": null,
+    "current": "https://localhost:5001/api/user/bookmarks?page=0&pageSize=20",
+    "total": 2,
+    "pages": 1,
+    "items": [
+        {
+            "name": "mybookie",
+            "url": "https://localhost:5001/api/title/tt0052520"
+        },
+        {
+            "name": "ScarJo",
+            "url": "https://localhost:5001/api/person/nm0424060"
+        }
+    ]
+}

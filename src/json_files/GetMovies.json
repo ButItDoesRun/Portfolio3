@@ -1,0 +1,150 @@
+{
+    "first": "https://localhost:5001/api/titles/movies?page=0&pageSize=20",
+    "prev": null,
+    "next": "https://localhost:5001/api/titles/movies?page=1&pageSize=20",
+    "current": "https://localhost:5001/api/titles/movies?page=0&pageSize=20",
+    "total": 27522,
+    "pages": 1377,
+    "items": [
+        {
+            "tConst": "tt0276919",
+            "name": "Dogville",
+            "airingDate": "2003",
+            "rating": 8,
+            "url": "https://localhost:5001/api/title/tt0276919"
+        },
+        {
+            "tConst": "tt1095417",
+            "name": "Morning",
+            "airingDate": "2010",
+            "rating": 7.8,
+            "url": "https://localhost:5001/api/title/tt1095417"
+        },
+        {
+            "tConst": "tt19757058",
+            "name": "Lombard",
+            "airingDate": "2022",
+            "rating": 8,
+            "url": "https://localhost:5001/api/title/tt19757058"
+        },
+        {
+            "tConst": "tt2765596",
+            "name": "Solitaire",
+            "airingDate": "2011",
+            "rating": 7.8,
+            "url": "https://localhost:5001/api/title/tt2765596"
+        },
+        {
+            "tConst": "tt4585862",
+            "name": "Solo",
+            "airingDate": "2008",
+            "rating": 8.7,
+            "url": "https://localhost:5001/api/title/tt4585862"
+        },
+        {
+            "tConst": "tt6170820",
+            "name": "Area",
+            "airingDate": "2016",
+            "rating": 8.3,
+            "url": "https://localhost:5001/api/title/tt6170820"
+        },
+        {
+            "tConst": "tt8154780",
+            "name": "Release",
+            "airingDate": "2019",
+            "rating": 8.8,
+            "url": "https://localhost:5001/api/title/tt8154780"
+        },
+        {
+            "tConst": "tt9222962",
+            "name": "Eakam",
+            "airingDate": "2021",
+            "rating": 8.1,
+            "url": "https://localhost:5001/api/title/tt9222962"
+        },
+        {
+            "tConst": "tt0473026",
+            "name": "D!ve",
+            "airingDate": "2004",
+            "rating": 8.6,
+            "url": "https://localhost:5001/api/title/tt0473026"
+        },
+        {
+            "tConst": "tt1344737",
+            "name": "Mud",
+            "airingDate": "2009",
+            "rating": 7.8,
+            "url": "https://localhost:5001/api/title/tt1344737"
+        },
+        {
+            "tConst": "tt15908954",
+            "name": "Blue Weekend",
+            "airingDate": "2021",
+            "rating": 8.3,
+            "url": "https://localhost:5001/api/title/tt15908954"
+        },
+        {
+            "tConst": "tt1807022",
+            "name": "Super",
+            "airingDate": "2010",
+            "rating": 8,
+            "url": "https://localhost:5001/api/title/tt1807022"
+        },
+        {
+            "tConst": "tt2455776",
+            "name": "Amity",
+            "airingDate": "2012",
+            "rating": 8.2,
+            "url": "https://localhost:5001/api/title/tt2455776"
+        },
+        {
+            "tConst": "tt5214110",
+            "name": "New Cops",
+            "airingDate": "2016",
+            "rating": 8.6,
+            "url": "https://localhost:5001/api/title/tt5214110"
+        },
+        {
+            "tConst": "tt5507686",
+            "name": "Betamax",
+            "airingDate": "2015",
+            "rating": 8.1,
+            "url": "https://localhost:5001/api/title/tt5507686"
+        },
+        {
+            "tConst": "tt6987958",
+            "name": "Bugs",
+            "airingDate": "2018",
+            "rating": 7.8,
+            "url": "https://localhost:5001/api/title/tt6987958"
+        },
+        {
+            "tConst": "tt2624852",
+            "name": "Gangoobai",
+            "airingDate": "2013",
+            "rating": 7.6,
+            "url": "https://localhost:5001/api/title/tt2624852"
+        },
+        {
+            "tConst": "tt3282162",
+            "name": "Boghz",
+            "airingDate": "2014",
+            "rating": 9,
+            "url": "https://localhost:5001/api/title/tt3282162"
+        },
+        {
+            "tConst": "tt3695244",
+            "name": "WARx2",
+            "airingDate": "2014",
+            "rating": 9.1,
+            "url": "https://localhost:5001/api/title/tt3695244"
+        },
+        {
+            "tConst": "tt6763698",
+            "name": "The Stuff",
+            "airingDate": "2018",
+            "rating": 7.6,
+            "url": "https://localhost:5001/api/title/tt6763698"
+        }
+    ]
+}
