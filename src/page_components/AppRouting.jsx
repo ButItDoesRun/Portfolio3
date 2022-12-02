@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState, useEffect } from 'react';
 import { 
-    Routes, Route, Link, NavLink, useParams, Outlet
+    Routes, Route, Link, NavLink, useParams, Outlet, Navigate
   } from "react-router-dom";
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -71,8 +71,11 @@ const AppRouting = () => {
 
         { /* ... and here is what happens when you click them */ }
         <Routes>
-            {/* Routing for navbar */}
+            {/* Routing for startpage */}
             <Route path="/api" element={<Welcome />} />
+            <Route path="/" element={<Navigate replace to="/api" />} />
+
+            {/* Routing for navbar */}
             <Route path="/api/titles/movies" element={<MoviePaginationList moviesPagedList={movies}/>} />
             <Route path="/api/titles/tvshows" element={<TvShowPaginationList tvshowsPagedList={tvshows} />} />
             <Route path="/api/persons/actors" element={<ActorsPaginationList actorsPagedList={actors} />} />
