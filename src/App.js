@@ -3,14 +3,12 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState, useEffect } from 'react';
 
-
-// Pages
-import AppRouting from './page_components/AppRouting';
+import AppRouting from 'AppRouting';
 
 
 function App() {
-  // let [val, setVal] = useState([]);
-  // let [state, setState] = useState("");
+  let [val, setVal] = useState([]);
+  let [state, setState] = useState("");
 
   return (
 
@@ -18,6 +16,7 @@ function App() {
 
       <div className='App'>
         <AppRouting/>
+
       </div>
 
 

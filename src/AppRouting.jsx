@@ -5,41 +5,7 @@ import {
   } from "react-router-dom";
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { NavItem } from 'react-bootstrap';
 import Container from "react-bootstrap/Container";
-
-
-//json
-import movies from '../json_files/GetMovies.json';
-import tvshows from '../json_files/GetTvShows.json';
-import actors from '../json_files/GetActors.json';
-import user from '../json_files/GetUser.json';
-import bookmarks from '../json_files/GetBookmarks.json';
-import history from '../json_files/GetUserHistory.json';
-import personSearch from '../json_files/SearchActor.json';
-import friends from '../json_files/TvShowByIdFriends.json';
-import genreSearch from '../json_files/SeachGenre.json';
-import titleSearch from '../json_files/SearchTitle.json';
-import movieCast from '../json_files/GetTitleCastMovie.json';
-import tvShowCast from '../json_files/GetTitleCastTvShow.json';
-import movieCrew from '../json_files/GetTitleCrewMovie.json';
-import tvShowCrew from '../json_files/GetTitleCrewTvShow.json';
-import title from '../json_files/TitleById.json';
-
-//page components
-import Search from './Search';
-import Welcome from './Welcome';
-import User from './User';
-import TvShow from './TvShow';
-
-// Components
-import MoviePaginationList from '../base_components/MoviePaginationList';
-import TvShowPaginationList from '../base_components/TvShowPaginationList';
-import ActorsPaginationList from '../base_components/ActorsPaginationList';
-import SearchPaginationList from '../base_components/SearchPaginationList';
-import TitleCastList from "../base_components/TitleCastList";
-import TitleCrewList from "../base_components/TitleCrewList";
-import TitleById from '../base_components/TitleById';
 
 const Error = () =>
   <div>404: Woops! I don't know that path</div>;
@@ -72,7 +38,7 @@ const AppRouting = () => {
         { /* ... and here is what happens when you click them */ }
         <Routes>
             {/* Routing for startpage */}
-            <Route path="/home" element={<Welcome />} />
+            <Route path="/home" element={<p>This is home page</p>} />
             <Route path="/" element={<Navigate replace to="/home" />} />
 
             {/* Routing for navbar */}
