@@ -82,9 +82,10 @@ const AppRouting = () => {
             <Route path="/user" element={<p>this is where the user dropdown element goes</p>} />
 
             {/* Routing for other components */}
-            <Route path="/search/actors/:search" element={<p>this is where the search actor element goes</p>} />
+            <Route path="/search" element={<p>This is where search element goes</p>} />
+            {/* <Route path="/search/actors/:search" element={<p>this is where the search actor element goes</p>} />
             <Route path="/search/titles/:search" element={<p>this is where the title search element goes</p>} />
-            <Route path="/search/genres/:search" element={<p>this is where the genresmovieList element goes</p>} />
+            <Route path="/search/genres/:search" element={<p>this is where the genresmovieList element goes</p>} /> */}
             <Route path="/title/:id" element={<p>this is where the title element goes</p>} />
             <Route path="/title/tvshow/:id" element={<p>this is where the tvshow element goes</p>} />
             <Route path="/title/cast/:id" element={<p>this is where the movieCast element goes</p>} />     
