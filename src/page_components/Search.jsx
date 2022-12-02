@@ -6,32 +6,48 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
+import { 
+    Routes, Route, Link, NavLink, useParams, Outlet, Navigate, useLocation
+  } from "react-router-dom";
 
-const Search = () =>
-    <Container fluid>
-        <Form>
-            <Row>
-                <Col lg={3}>
-                    <Form.Group className="mb-3" controlId="category">
-                        <Form.Select>
-                            <option>Title</option>
-                            <option>Person</option>
-                            <option>Genre</option>
-                        </Form.Select>
-                    </Form.Group>
-                </Col>
-                <Col lg={5}>
-                    <Form.Group className="mb-3" controlId="search">
-                        <Form.Control type="text" placeholder="Search..." />
-                    </Form.Group>
-                </Col>
-                <Col>
-                    <Button variant="primary" type="submit">
-                        Search
-                    </Button>
-                </Col>
-            </Row>
-        </Form>
-    </Container>;
+
+
+const Search = () => {
+    
+
+    return(
+    
+        <>
+        <Container fluid>
+            <Form>
+                <Row>
+                    <Col lg={3}>
+                        <Form.Group className="mb-3" controlId="category">
+                            <Form.Select>
+                                <option >Title</option>
+                                <option >Person</option>
+                                <option >Genre</option>
+                            </Form.Select>
+                        </Form.Group>
+                    </Col>
+                    <Col lg={5}>
+                        <Form.Group className="mb-3" controlId="search">
+                            <Form.Control type="text" placeholder="Search..." />
+                        </Form.Group>
+                    </Col>
+                    <Col>
+                        <Button variant="primary" type="submit" >
+                            Search
+                        </Button>
+                    </Col>
+                </Row>
+            </Form>
+        </Container>
+        </>
+
+
+    );
+
+}
 
 export default Search;

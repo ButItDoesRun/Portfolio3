@@ -53,13 +53,13 @@ const AppRouting = () => {
         { /*navbar*/ }
         <Navbar bg="light" variant="light">
             <Container>
-            <Navbar.Brand href="/api">OurMovieApp</Navbar.Brand>
+            <Navbar.Brand href="/home">OurMovieApp</Navbar.Brand>
             <Nav className="me-auto">
-                <NavItem><Search></Search></NavItem>
-                <NavLink className="btn" to="/api/titles/movies">Movies</NavLink>
-                <NavLink className="btn" to="/api/titles/tvshows">Tv Shows</NavLink>
-                <NavLink className="btn" to="/api/persons/actors">Actors</NavLink>
-                <NavLink className="btn" to="/api/user">User</NavLink>
+                <NavLink className="btn" to="/search">Search</NavLink>
+                <NavLink className="btn" to="/titles/movies">Movies</NavLink>
+                <NavLink className="btn" to="/titles/tvshows">Tv Shows</NavLink>
+                <NavLink className="btn" to="/persons/actors">Actors</NavLink>
+                <NavLink className="btn" to="/user">User</NavLink>
             </Nav>
             </Container>
         </Navbar>
@@ -72,25 +72,23 @@ const AppRouting = () => {
         { /* ... and here is what happens when you click them */ }
         <Routes>
             {/* Routing for startpage */}
-            <Route path="/api" element={<Welcome />} />
-            <Route path="/" element={<Navigate replace to="/api" />} />
+            <Route path="/home" element={<Welcome />} />
+            <Route path="/" element={<Navigate replace to="/home" />} />
 
             {/* Routing for navbar */}
-            <Route path="/api/titles/movies" element={<MoviePaginationList moviesPagedList={movies}/>} />
-            <Route path="/api/titles/tvshows" element={<TvShowPaginationList tvshowsPagedList={tvshows} />} />
-            <Route path="/api/persons/actors" element={<ActorsPaginationList actorsPagedList={actors} />} />
-            <Route path="/api/user" element={<User user={user} history={history} bookmarks={bookmarks}></User>} />
+            <Route path="/titles/movies" element={<p>this is where the movieList element goes</p>} />
+            <Route path="/titles/tvshows" element={<p>this is where the tvshowList element goes</p>} />
+            <Route path="/persons/actors" element={<p>this is where the actorList element goes</p>} />
+            <Route path="/user" element={<p>this is where the user dropdown element goes</p>} />
 
             {/* Routing for other components */}
-            <Route path="/api/search/actors/:search" element={<SearchPaginationList searchPagedList={personSearch}></SearchPaginationList>} />
-            <Route path="/api/search/titles/:search" element={<SearchPaginationList searchPagedList={titleSearch}></SearchPaginationList>} />
-            <Route path="/api/search/genres/:search" element={<SearchPaginationList searchPagedList={genreSearch}></SearchPaginationList>} />
-            <Route path="/api/title/:id" element={<TitleById title={title}></TitleById>} />
-            <Route path="/api/title/tvshow/:id" element={<TvShow tvShow={friends}></TvShow>} />
-            <Route path="/api/title/cast/:id" element={<TitleCastList titleCast = {movieCast}></TitleCastList>} />     
-            {/* <Route path="/api/title/cast/:id" element={<TitleCastList titleCast = {tvShowCast}></TitleCastList>} /> */}
-            <Route path="/api/title/crew/:id" element={<TitleCrewList titleCrew = {movieCrew}></TitleCrewList>} />
-            {/* <Route path="/api/title/crew/:id" element={<TitleCrewList titleCrew = {tvShowCrew}></TitleCrewList>} /> */}
+            <Route path="/search/actors/:search" element={<p>this is where the search actor element goes</p>} />
+            <Route path="/search/titles/:search" element={<p>this is where the title search element goes</p>} />
+            <Route path="/search/genres/:search" element={<p>this is where the genresmovieList element goes</p>} />
+            <Route path="/title/:id" element={<p>this is where the title element goes</p>} />
+            <Route path="/title/tvshow/:id" element={<p>this is where the tvshow element goes</p>} />
+            <Route path="/title/cast/:id" element={<p>this is where the movieCast element goes</p>} />     
+            <Route path="/title/crew/:id" element={<p>this is where the movieCrew element goes</p>} />
      
 
 
