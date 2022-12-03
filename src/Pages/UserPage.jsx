@@ -1,46 +1,23 @@
 import React, { useContext, useEffect, useState } from 'react';
 import TokenContext from '../Context/TokenContext';
-
 import Container from "react-bootstrap/Container";
-
-async function getUser(token, setUser) {
-    if (token != null) {
-        const requestContent = {
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer "+token,
-            },
-        };
-        console.log(requestContent);
-        try {
-            const res = await fetch("https://localhost:5001/api/user ", requestContent);
-            const json = await res.json();
-            setUser(user => json);
-        } catch (e) {
-            console.log(e);
-            setUser(null);
-        }
-    } else {
-        setUser(null);
-    }
-
-}
+import User from '../DataService/User';
 
 const UserPage = () => {
-    let [user, setUser] = useState({});
+    let [user, setUser] = useState(new User("Unknown", "Unknown", "Unknown", "Unknown"));
     const token = useContext(TokenContext);
 
     useEffect(() => {
-        getUser(token, setUser);
-    },[token])
+        async function getUserObject(user, setUser, token){
+            await user.GetUser(token, setUser);
+        };
+        getUserObject(user, setUser, token);
+    }, [token]);
 
     return (
         <Container>
-            <p>Token is: {token}</p>
+            <p>Username is: {user.username}</p>
 
-            <p>Username is: {(user === null) ? "nothing" : user.username}
-            </p>
-            {/* <User user="" bookmarks="" history=""></User> */}
         </Container>
     );
 };

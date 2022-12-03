@@ -45,6 +45,29 @@ class User {
             return (null);
         }
     };
+
+    async GetUser(token, setUser) {
+        if (token != null) {
+            const requestContent = {
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer "+token,
+                },
+            };
+            console.log(requestContent);
+            try {
+                const res = await fetch("https://localhost:5001/api/user ", requestContent);
+                const json = await res.json();
+                setUser(json);
+                
+            } catch (e) {
+                console.log(e);
+                setUser(new User("Unknown","Unknown","Unknown","Unknown"));
+            }
+        } else {
+            setUser(new User("Unknown","Unknown","Unknown","Unknown"));
+        }
+    }    
 }
 
 export default User;
