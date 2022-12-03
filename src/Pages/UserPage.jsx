@@ -38,7 +38,7 @@ const UserPage = () => {
         <Container>
             <p>Token is: {token}</p>
 
-            <p>Username is: {"user"}
+            <p>Username is: {(user === null) ? "nothing" : user.username}
             </p>
             {/* <User user="" bookmarks="" history=""></User> */}
         </Container>
