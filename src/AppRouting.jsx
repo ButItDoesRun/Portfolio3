@@ -33,7 +33,10 @@ const AppRouting = () => {
                                 <NavDropdown.Item as={Link} to="/user/history">History</NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to="/user/ratings">Ratings</NavDropdown.Item>
                                 <NavDropdown.Divider />
-                                <NavDropdown.Item as={Link} to="/user/logout">Log out</NavDropdown.Item>              
+                                {(token === null) ? 
+                                <NavDropdown.Item as={Link} to="/user/login">Login</NavDropdown.Item> :
+                                <NavDropdown.Item as={Link} to="/user/logout">Log out</NavDropdown.Item>  }
+                                             
                             </NavDropdown>
                         </Nav>
                     </Container>
@@ -58,6 +61,7 @@ const AppRouting = () => {
                     <Route path="/user/history" element={<p>this is where the search history element goes</p>} />
                     <Route path="/user/ratings" element={<p>this is where the ratings element goes</p>} />
                     <Route path="/user/logout" element={<p>this is where the logout element goes</p>} />
+                    <Route path="/user/login" element={<p>this is where the login element goes</p>} />
 
 
                     {/* Routing for other components */}
@@ -69,6 +73,7 @@ const AppRouting = () => {
                     <Route path="/title/tvshow/:id" element={<p>this is where the tvshow element goes</p>} />
                     <Route path="/title/cast/:id" element={<p>this is where the movieCast element goes</p>} />
                     <Route path="/title/crew/:id" element={<p>this is where the movieCrew element goes</p>} />
+                    <Route path="/user/register" element={<p>this is where the register element goes</p>} />
 
                     {/* Routing for errors*/}
                     <Route path="*" element={<Error />} />
