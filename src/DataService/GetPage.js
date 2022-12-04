@@ -1,8 +1,6 @@
-//REMEMBER TO CHANGE THIS BACK!!! 
-//https://localhost:5001/api/user/bookmarks
 // https://localhost:5001/api/search/actors/johan
 
-async function GetBookmarks(token, setBookmarks) {
+async function GetPage(token, url, page, pageSize, setPageList) {
     if (token != null) {
         const requestContent = {
             headers: {
@@ -10,24 +8,19 @@ async function GetBookmarks(token, setBookmarks) {
                 "Authorization": "Bearer " + token,
             },
         };
+        const pagingUrl = url + "?page=" + page + "&pageSize="+pageSize;
         try {
-            const res = await fetch("https://localhost:5001/api/search/actors/johan", requestContent);
+            const res = await fetch(pagingUrl, requestContent);
             const json = await res.json();
-            setBookmarks(json);
+            setPageList(json);
 
         } catch (e) {
             console.log(e);
-            setBookmarks(null);
+            setPageList(null);
         }
     } else {
-        setBookmarks(null);
+        setPageList(null);
     }
 }
 
-export default GetBookmarks;
-
-
-
-
-
-
+export default GetPage;

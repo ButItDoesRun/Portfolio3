@@ -1,25 +1,23 @@
-import React, { useContext, useEffect, useState } from 'react';
-import TokenContext from '../Context/TokenContext';
+import React, { useEffect, useState } from 'react';
 import Container from "react-bootstrap/Container";
-import GetBookmarks from '../DataService/Bookmarks';
-import BookmarksPaginationList from '../PageComponents/BookmarksPageComponents/BookmarksPaginationList';
+import PaginationList from '../PageComponents/PaginationList';
+import BookmarksList from '../PageComponents/BookmarksPageComponents/BookmarksList';
 
 const BookmarksPage = () => {
-    let [bookmarks, setBookmarks] = useState(null);
-    const token = useContext(TokenContext);
+    let [bookmarksContent, setBookmarksContent] = useState(null);
+    const url = "https://localhost:5001/api/search/actors/johan";
+    console.log(bookmarksContent);
 
     useEffect(() => {
-        async function getBookmarksList(token, setBookmarks){
-            if (token !== null)
-                await GetBookmarks(token, setBookmarks);
-        };
-        getBookmarksList(token, setBookmarks);
-    }, [token]);
+        console.log(bookmarksContent)
+    }, [bookmarksContent]);
 
     return (
         <Container>
-            {(bookmarks === null) ? <p>No content</p> : 
-                <BookmarksPaginationList bookmarksPagedList={bookmarks}></BookmarksPaginationList>
+            <PaginationList url={url} setContent={setBookmarksContent}></PaginationList>
+            {(bookmarksContent === null) ?
+                <p>Loading content...</p> :
+                <BookmarksList bookmarkList={bookmarksContent}></BookmarksList>
             }
         </Container>
     );
