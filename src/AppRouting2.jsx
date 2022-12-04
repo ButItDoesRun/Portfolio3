@@ -13,6 +13,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Login from './PageComponents/UserPageComponents/Login';
 import Logout from "./PageComponents/UserPageComponents/Logout";
 import UserPage from "./Pages/UserPage";
+import BookmarksPage from './Pages/BookmarksPage';
 
 const Error = () =>
     <div>404: Woops! I don't know that path</div>;
@@ -62,7 +63,7 @@ const AppRouting = () => {
                     <Route path="/titles/tvshows" element={<p>this is where the tvshowList element goes</p>} />
                     <Route path="/persons/actors" element={<p>this is where the actorList element goes</p>} />
                     <Route path="/user" element={<UserPage></UserPage>} />
-                    <Route path="/user/bookmarks" element={<p>this is where the bookmarks element goes</p>} />
+                    <Route path="/user/bookmarks" element={<BookmarksPage></BookmarksPage>} />
                     <Route path="/user/history" element={<p>this is where the search history element goes</p>} />
                     <Route path="/user/ratings" element={<p>this is where the ratings element goes</p>} />
                     <Route path="/user/logout" element={<Logout tokenSetter={setToken}></Logout>} />

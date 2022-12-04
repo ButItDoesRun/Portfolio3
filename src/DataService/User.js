@@ -44,8 +44,8 @@ class User {
             console.log(e);
             return (null);
         }
-    };
-
+    }; 
+    
     async GetUser(token, setUser) {
         if (token != null) {
             const requestContent = {
@@ -54,7 +54,6 @@ class User {
                     "Authorization": "Bearer "+token,
                 },
             };
-            console.log(requestContent);
             try {
                 const res = await fetch("https://localhost:5001/api/user ", requestContent);
                 const json = await res.json();
@@ -67,7 +66,7 @@ class User {
         } else {
             setUser(new User("Unknown","Unknown","Unknown","Unknown"));
         }
-    }    
+    }
 }
 
 export default User;
