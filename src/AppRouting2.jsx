@@ -15,6 +15,7 @@ import LogoutPage from "./Pages/LogoutPage";
 import UserPage from "./Pages/UserPage";
 import BookmarksPage from './Pages/BookmarksPage';
 import RegisterPage from "./Pages/RegisterPage";
+import HistoryPage from "./Pages/HistoryPage";
 
 const Error = () =>
     <div>404: Woops! I don't know that path</div>;
@@ -65,7 +66,7 @@ const AppRouting = () => {
                     <Route path="/persons/actors" element={<p>this is where the actorList element goes</p>} />
                     <Route path="/user" element={<UserPage/>} />
                     <Route path="/user/bookmarks" element={<BookmarksPage/>} />
-                    <Route path="/user/history" element={<p>this is where the search history element goes</p>} />
+                    <Route path="/user/history" element={<HistoryPage/>} />
                     <Route path="/user/ratings" element={<p>this is where the ratings element goes</p>} />
                     <Route path="/user/logout" element={<LogoutPage tokenSetter={setToken}/>} />
                     <Route path="/user/login" element={<LoginPage tokenSetter={setToken}/>} />
