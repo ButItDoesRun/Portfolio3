@@ -8,19 +8,21 @@ import TokenContext from '../Context/TokenContext';
 const PaginationList = ({ url, setContent}) => {
     const token = useContext(TokenContext);
     const maxPageButtons = 20;
-    let [page, setPage] = useState(1);
+    let [page, setPage] = useState(0);
     console.log(page);
     let [pageSize, setPageSize] = useState(20);
     let [pageList, setPageList] = useState(null);
 
     useEffect(() => {
-        async function getPageList(token, url, page, pageSize, setPageList) {
-            if (token !== null)
-                await GetPage(token, url, page, pageSize, setPageList);
+        async function getPageList(token, url, page, pageSize) {
+            if (token !== null){
+                const json = await GetPage(token, url, page, pageSize);
+                setPageList(json);
+                setContent(json.items);
+            }
         };
-        getPageList(token, url, page, pageSize, setPageList);
-        if (pageList !== null)
-            setContent(() => pageList.items);
+        setContent(null);
+        getPageList(token, url, page, pageSize);
     }, [page, pageSize]);
 
     return (

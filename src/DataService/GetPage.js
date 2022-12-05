@@ -1,6 +1,6 @@
 // https://localhost:5001/api/search/actors/johan
 
-async function GetPage(token, url, page, pageSize, setPageList) {
+async function GetPage(token, url, page, pageSize) {
     if (token != null) {
         const requestContent = {
             headers: {
@@ -12,14 +12,14 @@ async function GetPage(token, url, page, pageSize, setPageList) {
         try {
             const res = await fetch(pagingUrl, requestContent);
             const json = await res.json();
-            setPageList(json);
+            return(json);
 
         } catch (e) {
             console.log(e);
-            setPageList(null);
+            return(null);
         }
     } else {
-        setPageList(null);
+        return(null);
     }
 }
 

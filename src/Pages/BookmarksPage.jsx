@@ -5,7 +5,7 @@ import BookmarksList from '../PageComponents/BookmarksPageComponents/BookmarksLi
 
 const BookmarksPage = () => {
     let [bookmarksContent, setBookmarksContent] = useState(null);
-    const url = "https://localhost:5001/api/search/actors/johan";
+    const url = "https://localhost:5001/api/search/actors/johan"; //tester url
     console.log(bookmarksContent);
 
     useEffect(() => {
