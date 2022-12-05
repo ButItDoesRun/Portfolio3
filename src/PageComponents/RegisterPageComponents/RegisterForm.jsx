@@ -1,47 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Container from "react-bootstrap/Container";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-import User from '../../DataService/User';
+import BirthyearOptions from './BirthyearOptions';
 
-const RegisterUser = (username, password, email, birthyear ) => {
-    const user = new User(username, password, email, birthyear);
-    user.RegisterUser();
-};
-
-const BirthyearOptions = ({ getter, setter, startYear, endYear }) => {
-    let items = [];
-    // if (getter === "") setter(startYear);
-    for (let number = startYear; number <= endYear; number++) {
-        items.push(
-            <option key={number}>
-                {number}
-            </option>
-        );
-    }
-
-    return (
-        <Form.Select
-            value={getter}
-            onChange={e => setter(e.target.value)}>
-            {items}
-        </Form.Select>
-    );
-};
-
-
-const Register = () => {
-    const selectStartYear = "1980";
-    const selectEndYear = "2020";
-
-    let [username, setUsername] = useState("");
-    let [email, setEmail] = useState("");
-    let [password, setPassword] = useState("");
-    let [birthyear, setBirthyear] = useState(selectStartYear);
-
+const RegisterForm = ({ username, setUsername, password, setPassword, email, setEmail, birthyear, setBirthyear, selectStartYear, selectEndYear }) => {
     return (
         <Container fluid>
             <Form>
@@ -79,15 +44,9 @@ const Register = () => {
                             onChange={e => setPassword(e.target.value)} />
                     </Form.Group>
                 </Row>
-                <Row>
-                    <Col>
-                        <Button variant="primary" onClick={() => RegisterUser(username, password, email, birthyear)}>
-                            Register
-                        </Button>
-                    </Col>
-                </Row>
             </Form>
         </Container>);
+
 };
 
-export default Register;
+export default RegisterForm;

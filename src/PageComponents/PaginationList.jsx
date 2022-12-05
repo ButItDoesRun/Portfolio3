@@ -9,7 +9,6 @@ const PaginationList = ({ url, setContent}) => {
     const token = useContext(TokenContext);
     const maxPageButtons = 20;
     let [page, setPage] = useState(0);
-    console.log(page);
     let [pageSize, setPageSize] = useState(20);
     let [pageList, setPageList] = useState(null);
 

@@ -18,9 +18,16 @@ class User {
         };
         // console.log(JSON.stringify(user))  
 
-        fetch("https://localhost:5001/api/user/register", requestContent)
-            .then(res => console.log(res))
-            .catch(e => console.log(e));
+        const result = fetch("https://localhost:5001/api/user/register", requestContent)
+            .then(res => {
+                return(res.ok);
+            })    
+            .catch(e => {
+                console.log(e);
+                return(false);
+            });
+
+        return(result);
     };
 
     async LoginUser() {

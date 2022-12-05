@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Container from "react-bootstrap/Container";
 
-const Logout = ({ tokenSetter }) => {
+const LogoutPage = ({ tokenSetter }) => {
     useEffect(() => {
         tokenSetter(null);
     },[]);
@@ -13,4 +13,4 @@ const Logout = ({ tokenSetter }) => {
     );
 };
 
-export default Logout;
+export default LogoutPage;
