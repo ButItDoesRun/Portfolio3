@@ -24,6 +24,8 @@ import TvShowPage from "./Pages/TvShowPage";
 import PersonPage from "./Pages/PersonPage";
 import TitleCastPage from "./Pages/TitleCastPage";
 import TitleCrewPage from "./Pages/TitleCrewPage";
+import SearchBar from "./PageComponents/SearchBarComponents/SearchPersonsList";
+import RatingsPage from "./Pages/RatingsPage";
 
 
 const Error = () =>
@@ -40,7 +42,7 @@ const AppRouting = () => {
                     <Container>
                         <Navbar.Brand href="/home">OurMovieApp</Navbar.Brand>
                         <Nav className="me-auto">
-                            <NavLink className="btn" to="/search">Search</NavLink>
+                            <NavLink className="btn" to="/search/:category/:search">Search</NavLink>
                             <NavLink className="btn" to="/titles/movies">Movies</NavLink>
                             <NavLink className="btn" to="/titles/tvshows">Tv Shows</NavLink>
                             <NavLink className="btn" to="/persons/actors">Actors</NavLink>
@@ -76,13 +78,14 @@ const AppRouting = () => {
                     <Route path="/user" element={<UserPage/>} />
                     <Route path="/user/bookmarks" element={<BookmarksPage/>} />
                     <Route path="/user/history" element={<HistoryPage/>} />
-                    <Route path="/user/ratings" element={<p>this is where the ratings element goes</p>} />
+                    <Route path="/user/ratings" element={<RatingsPage/>} />
                     <Route path="/user/logout" element={<LogoutPage tokenSetter={setToken}/>} />
                     <Route path="/user/login" element={<LoginPage tokenSetter={setToken}/>} />
 
 
                     {/* Routing for other components */}
-                    <Route path="/search" element={<p>This is where search element goes</p>} />
+                    <Route path="/search/:category/:search" element={<SearchBar/>} />
+
                     {/* <Route path="/search/actors/:search" element={<p>this is where the search actor element goes</p>} />
             <Route path="/search/titles/:search" element={<p>this is where the title search element goes</p>} />
             <Route path="/search/genres/:search" element={<p>this is where the genresmovieList element goes</p>} /> */}
