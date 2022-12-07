@@ -12,12 +12,13 @@ async function CreateBookmark(token, id, name) {
     return (result);
 };
 
-const BookmarksCreatePage = () => {
+const BookmarksCreatePage = ({token}) => {
     const {id} = useParams();
     let [name, setName] = useState(null);
     let [bookmarkCreated, setBookmarkCreated] = useState(false);
-    const token = useContext(TokenContext);
+    // const token = useContext(TokenContext);
 
+    console.log("bookmark token is: "+token);
     return (
         <Container>
             <p>Name your bookmark</p>

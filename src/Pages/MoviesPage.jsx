@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import Container from "react-bootstrap/Container";
 import PaginationListNoToken from '../PageComponents/PaginationListNoToken';
 import MoviesList from '../PageComponents/MoviesPageComponents/MoviesList';

@@ -13,6 +13,7 @@ class Bookmark {
             url += "/" + bookmark.name;
         }
         
+        console.log("token is "+token);
         if (token != null) {
             const requestContent = {
                 headers: {
@@ -23,6 +24,7 @@ class Bookmark {
 
             const result = fetch(url, requestContent)
                 .then(res => {
+                    console.log(res);
                     return (res.ok);
                 })
                 .catch(e => {
