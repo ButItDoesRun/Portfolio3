@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import Container from "react-bootstrap/Container";
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
-import {NavLink} from "react-router-dom";
+import {NavLink, Link} from "react-router-dom";
 
 // Components
 import DirectorList from './DirectorList';
@@ -25,8 +25,9 @@ const TitleById = ({ title }) => {
                     <p>Genre: {title.genre[0]}</p>
                     <p>Runtime: {title.runtime}</p>
                     <p>Rating: {title.rating}</p>
-                    <p><NavLink to={url} 
-                    onClick = { () => window.location.replace(url)}>Bookmark Me!</NavLink></p>
+                    <NavLink as={Link} to={url}>Bookmark Me!</NavLink>
+                    {/* <p><NavLink to={url} 
+                    onClick = { () => window.location.replace(url)}>Bookmark Me!</NavLink></p> */}
                 </Tab>
 
                 <Tab eventKey="directors" title="Directors">
