@@ -13,7 +13,6 @@ class Bookmark {
             url += "/" + bookmark.name;
         }
         
-        console.log("token is "+token);
         if (token != null) {
             const requestContent = {
                 headers: {
