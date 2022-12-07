@@ -15,6 +15,7 @@ class Bookmark {
         
         if (token != null) {
             const requestContent = {
+                method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                     "Authorization": "Bearer " + token,

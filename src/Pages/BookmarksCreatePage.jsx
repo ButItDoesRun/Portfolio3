@@ -1,9 +1,12 @@
 import React, { useEffect, useContext, useState } from 'react';
-import {useParams} from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 import Bookmark from '../DataService/Bookmark';
+import BookmarkForm from '../PageComponents/BookmarksPageComponents/BookmarkForm';
 import TokenContext from '../Context/TokenContext';
 
 async function CreateBookmark(token, id, name) {
@@ -12,24 +15,43 @@ async function CreateBookmark(token, id, name) {
     return (result);
 };
 
-const BookmarksCreatePage = ({token}) => {
-    const {id} = useParams();
+const BookmarksCreatePage = () => {
+    const navigate = useNavigate();
+    const { id } = useParams();
     let [name, setName] = useState(null);
-    let [bookmarkCreated, setBookmarkCreated] = useState(false);
-    // const token = useContext(TokenContext);
+    let [bookmarkCreated, setBookmarkCreated] = useState(null);
+    const token = useContext(TokenContext);
 
-    console.log("bookmark token is: "+token);
+    useEffect(() => {
+        if (bookmarkCreated === false) {
+            alert("The bookmark was not created");
+        }
+        if (bookmarkCreated === true) {
+            alert("The bookmark was created!");
+            navigate("/user/bookmarks");
+        }
+    }, [bookmarkCreated]);
+
+
     return (
-        <Container>
-            <p>Name your bookmark</p>
-            <p>Field to name your bookmark</p>
-            <p>Button to add/save, links to bookmarks list</p>
-            <Button variant="primary" onClick={async () => {
-                            const result = await CreateBookmark(token, id, name);
-                            setBookmarkCreated(result);
-                            console.log(result);
-                        }}>Add bookmark</Button>
-            <p>Button to cancel, links to main page</p>
+        <Container fluid>
+            <Row>
+                <BookmarkForm name={name} setName={setName}></BookmarkForm>
+            </Row>
+            <Row>
+                <Col>
+                    <Button variant="primary" onClick={async () => {
+                        const result = await CreateBookmark(token, id, name);
+                        setBookmarkCreated(result);
+                    }}>Add bookmark</Button>
+                </Col>
+                <Col>
+                <Button variant="danger" onClick={() => {
+                        setBookmarkCreated(false);
+                        navigate("/home");
+                    }}>Cancel</Button>
+                </Col>
+            </Row>
         </Container>
     );
 };

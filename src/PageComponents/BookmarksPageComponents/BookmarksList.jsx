@@ -1,8 +1,21 @@
 import React from 'react';
 import Container from "react-bootstrap/Container";
 import ListGroup from 'react-bootstrap/ListGroup';
+import { NavLink, Link } from "react-router-dom";
 
-const Bookmark = ({ bookmark }) => <p><a href={bookmark.url}> {bookmark.name}</a></p>;
+const Bookmark = ({ bookmark }) => {
+    const lastSegment = bookmark.url.split("/").pop();
+    let url;
+    if (lastSegment.includes("t")) {
+        url = "/title/"+lastSegment;
+    } else if(lastSegment.includes("n")){
+        url = "/person/"+lastSegment;
+    }
+
+    return(
+        <NavLink as={Link} to={url}>{bookmark.name}</NavLink>
+    );
+};
 
 const BookmarksList = ({ bookmarkList }) =>
     <Container fluid>
