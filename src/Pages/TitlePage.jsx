@@ -7,7 +7,7 @@ import TitleById from '../PageComponents/TitlePageComponents/TitleById';
 const TitlePage = () => {
     let [titleContent, setTitleContent] = useState(null);
     
-    const base = "https://localhost:5001/api/title/"; 
+    const base = "https://localhost:5001/api/title/";
     const {id} = useParams();
     const url = base + id;
 
