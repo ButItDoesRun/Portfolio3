@@ -7,30 +7,36 @@ import Tabs from 'react-bootstrap/Tabs';
 import DirectorList from './DirectorList';
 import TitleActorList from './TitleActorList'; 
 
-const TitleById = ({ title }) =>
-    <Container fluid>
-        <h2>{title.title}</h2>
-        <Tabs
-            defaultActiveKey="facts"
-            id="uncontrolled-tab-example"
-            className="mb-3"
-        >
-            <Tab eventKey="facts" title="Facts">
-                <p>Year: {title.year}</p>
-                <p>Genre: {title.genre[0]}</p>
-                <p>Runtime: {title.runtime}</p>
-                <p>Rating: {title.rating}</p>
-                <p><a href={title.bookmark}> Bookmark Me!</a></p>
-            </Tab>
+const TitleById = ({ title }) => {
+    const lastSegment = movie.url.split("/").pop();
+    const url = `/title/${lastSegment}`; //change this stuff
 
-            <Tab eventKey="directors" title="Directors">
-                <DirectorList directorList={title.directorListWithUrl}></DirectorList>
-            </Tab>
+    return (
+        <Container fluid>
+            <h2>{title.title}</h2>
+            <Tabs
+                defaultActiveKey="facts"
+                id="uncontrolled-tab-example"
+                className="mb-3"
+            >
+                <Tab eventKey="facts" title="Facts">
+                    <p>Year: {title.year}</p>
+                    <p>Genre: {title.genre[0]}</p>
+                    <p>Runtime: {title.runtime}</p>
+                    <p>Rating: {title.rating}</p>
+                    <p><a href={title.bookmark}> Bookmark Me!</a></p>
+                </Tab>
 
-            <Tab eventKey="actors" title="Actors">
-                <TitleActorList titleActorList = {title.actorListWithUrl}></TitleActorList>
-            </Tab>
-        </Tabs>
-    </Container>;
+                <Tab eventKey="directors" title="Directors">
+                    <DirectorList directorList={title.directorListWithUrl}></DirectorList>
+                </Tab>
+
+                <Tab eventKey="actors" title="Actors">
+                    <TitleActorList titleActorList = {title.actorListWithUrl}></TitleActorList>
+                </Tab>
+            </Tabs>
+        </Container>
+    );
+};
 
 export default TitleById;
