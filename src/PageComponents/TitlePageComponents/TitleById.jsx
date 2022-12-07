@@ -2,14 +2,15 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
+import {NavLink} from "react-router-dom";
 
 // Components
 import DirectorList from './DirectorList';
 import TitleActorList from './TitleActorList'; 
 
 const TitleById = ({ title }) => {
-    const lastSegment = movie.url.split("/").pop();
-    const url = `/title/${lastSegment}`; //change this stuff
+    const lastSegment = title.bookmark.split("/").pop();
+    const url = `/user/bookmarks/create/${lastSegment}`;
 
     return (
         <Container fluid>
@@ -24,7 +25,8 @@ const TitleById = ({ title }) => {
                     <p>Genre: {title.genre[0]}</p>
                     <p>Runtime: {title.runtime}</p>
                     <p>Rating: {title.rating}</p>
-                    <p><a href={title.bookmark}> Bookmark Me!</a></p>
+                    <p><NavLink to={url} 
+                    onClick = { () => window.location.replace(url)}>Bookmark Me!</NavLink></p>
                 </Tab>
 
                 <Tab eventKey="directors" title="Directors">

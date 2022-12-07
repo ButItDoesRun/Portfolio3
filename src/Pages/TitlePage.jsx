@@ -9,7 +9,7 @@ const TitlePage = () => {
     
     const base = "https://localhost:5001/api/title/"; 
     const {id} = useParams();
-    let url = base + id;
+    const url = base + id;
 
     useEffect(() => {
     }, [titleContent]);

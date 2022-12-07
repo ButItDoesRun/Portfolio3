@@ -95,6 +95,10 @@ const AppRouting = () => {
                     <Route path="/title/crew/:id" element={<TitleCrewPage/>} />
                     <Route path="/user/register" element={<RegisterPage/>} />
                     <Route path="/person/:id" element={<PersonPage/>} />
+                    <Route path="/user/bookmarks/create/:id" element={<p>Create bookmark</p>} />
+                    <Route path="/user/bookmarks/delete/:id" element={<p>Delete bookmark</p>} />
+                    <Route path="/user/bookmarks/edit/:id" element={<p>Edit bookmark</p>} />
+                    <Route path="/user/history/delete" element={<p>Delete history</p>} />
 
                     {/* Routing for errors*/}
                     <Route path="*" element={<Error />} />
