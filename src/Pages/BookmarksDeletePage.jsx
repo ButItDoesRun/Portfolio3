@@ -15,12 +15,15 @@ const BookmarksDeletePage = () => {
     const token = useContext(TokenContext);
 
     useEffect(() => {
-        async function DeleteBookmark(token, id) {
-            const bookmark = new Bookmark(id);
-            const result = await bookmark.DeleteBookmark(token);
-            setBookmarkDeleted(result);
-        };
-        DeleteBookmark(token, id);
+        if(bookmarkDeleted === null){
+            async function DeleteBookmark(token, id) {
+                const bookmark = new Bookmark(id);
+                const result = await bookmark.DeleteBookmark(token);
+                setBookmarkDeleted(result);
+            };
+            DeleteBookmark(token, id);
+
+        }        
         
         if (bookmarkDeleted === false) {
             alert("An error occured");
