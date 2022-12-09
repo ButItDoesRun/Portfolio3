@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Container from "react-bootstrap/Container";
 import ListGroup from 'react-bootstrap/ListGroup';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import {NavLink} from "react-router-dom";
+import {NavLink, Link} from "react-router-dom";
 
 const Movie = ({ movie }) => {
     const lastSegment = movie.url.split("/").pop();
@@ -13,8 +13,12 @@ const Movie = ({ movie }) => {
         <Container>
         <Row>
         <Col xs={3}>Title : </Col>
-        <Col xs={15}><NavLink to={url} 
-        onClick = { () => window.location.replace(url)}>{movie.name}</NavLink></Col>
+        <Col xs={15}>
+            <NavLink as={Link} to={url}>{movie.name}</NavLink>
+            {/* <NavLink to={url} 
+        onClick = { () => window.location.replace(url)}>{movie.name}
+            </NavLink> */}
+        </Col>
         <Col xs={15}>Airing date : {movie.airingDate}</Col>
         <Col xs={15}>Rating : {movie.rating}</Col>
         </Row>
