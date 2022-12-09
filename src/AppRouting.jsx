@@ -84,7 +84,7 @@ const AppRouting = () => {
 
 
                     {/* Routing for other components */}
-                    <Route path="/search/:category/:search" element={<SearchBar/>} />
+                    <Route path="/search/:category/:search" element={<p>SearchBar</p>} />
 
                     {/* <Route path="/search/actors/:search" element={<p>this is where the search actor element goes</p>} />
             <Route path="/search/titles/:search" element={<p>this is where the title search element goes</p>} />
