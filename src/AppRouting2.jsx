@@ -27,6 +27,9 @@ import TitleCrewPage from "./Pages/TitleCrewPage";
 import SearchBar from "./PageComponents/SearchBarComponents/SearchPersonsList";
 import RatingsPage from "./Pages/RatingsPage";
 import BookmarksCreatePage from "./Pages/BookmarksCreatePage";
+import BookmarksDeletePage from "./Pages/BookmarksDeletePage";
+import BookmarksEditPage from "./Pages/BookmarksEditPage";
+import HistoryDeletePage from "./Pages/HistoryDeletePage";
 
 
 const Error = () =>
@@ -97,9 +100,9 @@ const AppRouting = () => {
                     <Route path="/user/register" element={<RegisterPage/>} />
                     <Route path="/person/:id" element={<PersonPage/>} />
                     <Route path="/user/bookmarks/create/:id" element={<BookmarksCreatePage/>} />
-                    <Route path="/user/bookmarks/delete/:id" element={<p>Delete bookmark</p>} />
-                    <Route path="/user/bookmarks/edit/:id" element={<p>Edit bookmark</p>} />
-                    <Route path="/user/history/delete" element={<p>Delete history</p>} />
+                    <Route path="/user/bookmarks/delete/:id" element={<BookmarksDeletePage/>} />
+                    <Route path="/user/bookmarks/edit/:id/:name" element={<BookmarksEditPage/>} />
+                    <Route path="/user/history/delete" element={<HistoryDeletePage/>} />
 
                     {/* Routing for errors*/}
                     <Route path="*" element={<Error />} />

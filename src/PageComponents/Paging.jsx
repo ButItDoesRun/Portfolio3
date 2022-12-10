@@ -9,7 +9,7 @@ const Paging = ({ pageList, page, maxPageButtons, setPage }) => {
     if (pagesTotal > maxPagesShown) items.push(
         <Pagination.Ellipsis />
     );
-
+    
     for (let number = 0; number < pagesTotal; number++) {
         if (number > active - maxPagesShown / 2 && number < active + maxPagesShown / 2) {
             items.push(
@@ -27,9 +27,9 @@ const Paging = ({ pageList, page, maxPageButtons, setPage }) => {
     return (
         <Pagination>
             <Pagination.First key={"first"} onClick={() => setPage(0)} />
-            <Pagination.Prev  key={"prev"}  onClick={() => setPage(active - 1)} />
+            <Pagination.Prev  key={"prev"}  onClick={() => (active - 1 < 0) ? setPage(0) : setPage(active - 1)} />
             {items}
-            <Pagination.Next  key={"next"}  onClick={() => setPage(active + 1)} />
+            <Pagination.Next  key={"next"}  onClick={() => (active + 1 > pagesTotal-1) ? setPage(pagesTotal-1) : setPage(active + 1)} />
             <Pagination.Last  key={"last"}  onClick={() => setPage(pagesTotal-1)} />
         </Pagination>
     );

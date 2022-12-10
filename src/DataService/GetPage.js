@@ -8,6 +8,7 @@ async function GetPage(token, url, page, pageSize) {
                 "Authorization": "Bearer " + token,
             },
         };
+        
         const pagingUrl = url + "?page=" + page + "&pageSize="+pageSize;
         try {
             const res = await fetch(pagingUrl, requestContent);

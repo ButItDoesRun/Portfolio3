@@ -15,7 +15,7 @@ const BookmarkWithButtons = ({ bookmark }) => {
                     <Bookmark bookmark={bookmark} />
                 </Col>
                 <Col md="auto">
-                    <Button variant="primary" as={Link} to={"/user/bookmarks/edit/" + lastSegment}>
+                    <Button variant="primary" as={Link} to={"/user/bookmarks/edit/" + lastSegment + "/" +bookmark.name}>
                         Edit
                     </Button>
                 </Col>

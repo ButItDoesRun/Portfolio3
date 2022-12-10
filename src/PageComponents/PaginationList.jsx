@@ -17,7 +17,7 @@ const PaginationList = ({ url, setContent}) => {
             if (token !== null){
                 const json = await GetPage(token, url, page, pageSize);
                 setPageList(json);
-                setContent(json.items);
+                setContent(json.items);                
             }
         };
         setContent(null);
