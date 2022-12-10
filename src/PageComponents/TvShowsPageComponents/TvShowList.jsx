@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import ListGroup from 'react-bootstrap/ListGroup';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import {NavLink} from "react-router-dom";
+import {NavLink, Link} from "react-router-dom";
 
 
 const TvShow = ({ tvshow }) => {
@@ -14,8 +14,10 @@ const TvShow = ({ tvshow }) => {
         <Container>
         <Row>
         <Col xs={3}>Tv Show : </Col>
-        <Col xs={15}><NavLink to={url} 
-        onClick = { () => window.location.replace(url)}>{tvshow.name}</NavLink></Col>
+        <Col xs={15}><NavLink as={Link} to={url}>{tvshow.name}</NavLink>
+            {/* <NavLink to={url} 
+        onClick = { () => window.location.replace(url)}>{tvshow.name}</NavLink> */}
+        </Col>
         <Col xs={15}>Airing date : {tvshow.airingDate}</Col>
         <Col xs={15}>Seasons : {tvshow.tvShowContentList.length}</Col>
         <Col xs={15}>Rating : {tvshow.rating}</Col>

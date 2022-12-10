@@ -2,7 +2,7 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
-import {NavLink} from "react-router-dom";
+import {NavLink, Link} from "react-router-dom";
 
 // Components
 // import DirectorList from './DirectorList';
@@ -24,8 +24,10 @@ const PersonById = ({ person }) => {
                 <Tab eventKey="facts" title="Facts">
                     <p>Birth Year: {person.birthYear}</p>
                     <p>Death Year: {person.deathYear}</p>
-                    <p><NavLink to={url} 
-                    onClick = { () => window.location.replace(url)}>Bookmark Me!</NavLink></p>
+                    <p> <NavLink as={Link} to={url}>Bookmark Me!</NavLink>
+                        {/* <NavLink to={url} 
+                    onClick = { () => window.location.replace(url)}>Bookmark Me!</NavLink> */}
+                    </p>
                 </Tab>
 
                 <Tab eventKey="professions" title="Professions">

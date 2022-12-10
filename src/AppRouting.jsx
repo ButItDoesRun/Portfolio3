@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext} from 'react';
 import {
-    Routes, Route, Link, NavLink, useParams, Outlet, Navigate
+    Routes, Route, Link, NavLink, useParams, Outlet, Navigate, useNavigate
 } from "react-router-dom";
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -26,6 +26,8 @@ import TitleCastPage from "./Pages/TitleCastPage";
 import TitleCrewPage from "./Pages/TitleCrewPage";
 import SearchBar from "./PageComponents/SearchBarComponents/SearchPersonsList";
 import RatingsPage from "./Pages/RatingsPage";
+import BookmarksCreatePage from "./Pages/BookmarksCreatePage";
+
 
 
 const Error = () =>
@@ -33,6 +35,7 @@ const Error = () =>
 
 const AppRouting = () => {
     let [token, setToken] = useState(null);
+    const navigate = useNavigate();
 
     return (
         <>
@@ -68,8 +71,10 @@ const AppRouting = () => {
                 { /* ... and here is what happens when you click them */}
                 <Routes>
                     {/* Routing for startpage */}
-                    <Route path="/home" element={<p>This is home page</p>} />
+                    <Route path="/home" element={<p>This is home page</p>} />   
+                    {/* <Route path="/" element={navigate("/home")} />   */}
                     <Route path="/" element={<Navigate replace to="/home" />} />
+                    {/* <Route path="/" element={<NavLink as={Link} to={"/home"}></NavLink> } /> */}
 
                     {/* Routing for navbar */}
                     <Route path="/titles/movies" element={<MoviesPage/>} />
@@ -95,7 +100,7 @@ const AppRouting = () => {
                     <Route path="/title/crew/:id" element={<TitleCrewPage/>} />
                     <Route path="/user/register" element={<RegisterPage/>} />
                     <Route path="/person/:id" element={<PersonPage/>} />
-                    <Route path="/user/bookmarks/create/:id" element={<p>Create bookmark</p>} />
+                    <Route path="/user/bookmarks/create/:id" element={<BookmarksCreatePage/>} />
                     <Route path="/user/bookmarks/delete/:id" element={<p>Delete bookmark</p>} />
                     <Route path="/user/bookmarks/edit/:id" element={<p>Edit bookmark</p>} />
                     <Route path="/user/history/delete" element={<p>Delete history</p>} />

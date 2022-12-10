@@ -2,7 +2,7 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
-import {NavLink, useParams} from "react-router-dom";
+import {NavLink, Link, useParams} from "react-router-dom";
 
 // Components
 import SeasonsAccordion from './SeasonsAccordion';
@@ -23,8 +23,10 @@ const TvShow = ({ tvShow }) => {
                 <Tab eventKey="facts" title="Facts">
                     <p>Rating: {tvShow.rating}</p>
                     <p>Airing Date: {tvShow.airingDate}</p>
-                    <p><NavLink to={url} 
-                    onClick = { () => window.location.replace(url)}>Bookmark Me!</NavLink></p>
+                    <p><NavLink as={Link} to={url}>Bookmark Me!</NavLink>
+                        {/* <NavLink to={url} 
+                    onClick = { () => window.location.replace(url)}>Bookmark Me!</NavLink> */}
+                    </p>
                 </Tab>
 
                 <Tab eventKey="seasons" title="Seasons">

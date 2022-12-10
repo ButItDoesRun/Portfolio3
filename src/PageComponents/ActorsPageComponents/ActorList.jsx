@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import ListGroup from 'react-bootstrap/ListGroup';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import {NavLink} from "react-router-dom";
+import {NavLink, Link} from "react-router-dom";
 
 
 const Actor = ({ actor }) => {
@@ -14,8 +14,10 @@ const Actor = ({ actor }) => {
         <Container>
         <Row>
         <Col xs={3}>Person : </Col>
-        <Col xs={15}><NavLink to={url} 
-        onClick = { () => window.location.replace(url)}>{actor.name}</NavLink></Col>
+        <Col xs={15}> <NavLink as={Link} to={url}>{actor.name}</NavLink>
+            {/* <NavLink to={url} 
+        onClick = { () => window.location.replace(url)}>{actor.name}</NavLink> */}
+        </Col>
         <Col xs={15}>Birth year : {actor.birthYear}</Col>
         <Col xs={15}>Death year : {actor.deathYear}</Col>
         <Col xs={15}>Popularity : {actor.popularity}</Col>
