@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState, useEffect, useContext} from 'react';
 import {
-    Routes, Route, Link, NavLink, useParams, Outlet, Navigate, useNavigate
+    Routes, Route, Link, NavLink, useParams, Outlet, Navigate
 } from "react-router-dom";
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -27,7 +27,9 @@ import TitleCrewPage from "./Pages/TitleCrewPage";
 import SearchBar from "./PageComponents/SearchBarComponents/SearchPersonsList";
 import RatingsPage from "./Pages/RatingsPage";
 import BookmarksCreatePage from "./Pages/BookmarksCreatePage";
-
+import BookmarksDeletePage from "./Pages/BookmarksDeletePage";
+import BookmarksEditPage from "./Pages/BookmarksEditPage";
+import HistoryDeletePage from "./Pages/HistoryDeletePage";
 
 
 const Error = () =>
@@ -35,7 +37,6 @@ const Error = () =>
 
 const AppRouting = () => {
     let [token, setToken] = useState(null);
-    const navigate = useNavigate();
 
     return (
         <>
@@ -43,8 +44,8 @@ const AppRouting = () => {
                 { /*navbar*/}
                 <Navbar bg="light" variant="light">
                     <Container>
-                        <Navbar.Brand href="/home">OurMovieApp</Navbar.Brand>
                         <Nav className="me-auto">
+                            <Navbar.Brand  as={Link} to="/home">OurMovieApp</Navbar.Brand>
                             <NavLink className="btn" to="/search/:category/:search">Search</NavLink>
                             <NavLink className="btn" to="/titles/movies">Movies</NavLink>
                             <NavLink className="btn" to="/titles/tvshows">Tv Shows</NavLink>
@@ -72,9 +73,7 @@ const AppRouting = () => {
                 <Routes>
                     {/* Routing for startpage */}
                     <Route path="/home" element={<p>This is home page</p>} />   
-                    {/* <Route path="/" element={navigate("/home")} />   */}
                     <Route path="/" element={<Navigate replace to="/home" />} />
-                    {/* <Route path="/" element={<NavLink as={Link} to={"/home"}></NavLink> } /> */}
 
                     {/* Routing for navbar */}
                     <Route path="/titles/movies" element={<MoviesPage/>} />
@@ -101,9 +100,9 @@ const AppRouting = () => {
                     <Route path="/user/register" element={<RegisterPage/>} />
                     <Route path="/person/:id" element={<PersonPage/>} />
                     <Route path="/user/bookmarks/create/:id" element={<BookmarksCreatePage/>} />
-                    <Route path="/user/bookmarks/delete/:id" element={<p>Delete bookmark</p>} />
-                    <Route path="/user/bookmarks/edit/:id" element={<p>Edit bookmark</p>} />
-                    <Route path="/user/history/delete" element={<p>Delete history</p>} />
+                    <Route path="/user/bookmarks/delete/:id" element={<BookmarksDeletePage/>} />
+                    <Route path="/user/bookmarks/edit/:id" element={<BookmarksEditPage/>} />
+                    <Route path="/user/history/delete" element={<HistoryDeletePage/>} />
 
                     {/* Routing for errors*/}
                     <Route path="*" element={<Error />} />

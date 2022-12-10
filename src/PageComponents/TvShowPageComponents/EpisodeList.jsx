@@ -8,7 +8,7 @@ const EpisodeList = ({ episodeList }) =>
     <Container fluid>
         <ListGroup>
             {episodeList.map(episode =>
-                <ListGroup.Item>
+                <ListGroup.Item key = {episode.url}>
                     <Episode episode={episode} />
                 </ListGroup.Item>
             )}

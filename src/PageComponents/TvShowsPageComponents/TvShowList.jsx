@@ -15,8 +15,6 @@ const TvShow = ({ tvshow }) => {
         <Row>
         <Col xs={3}>Tv Show : </Col>
         <Col xs={15}><NavLink as={Link} to={url}>{tvshow.name}</NavLink>
-            {/* <NavLink to={url} 
-        onClick = { () => window.location.replace(url)}>{tvshow.name}</NavLink> */}
         </Col>
         <Col xs={15}>Airing date : {tvshow.airingDate}</Col>
         <Col xs={15}>Seasons : {tvshow.tvShowContentList.length}</Col>
@@ -32,7 +30,7 @@ const TvShowList = ({ tvshowList }) =>
     <Container fluid>
         <ListGroup>
             {tvshowList.map(tvshow =>
-                <ListGroup.Item>
+                <ListGroup.Item key={tvshow.name}>
                     <TvShow tvshow={tvshow} />
                 </ListGroup.Item>
             )}

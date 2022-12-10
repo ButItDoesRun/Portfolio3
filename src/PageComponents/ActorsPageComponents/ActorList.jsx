@@ -15,8 +15,6 @@ const Actor = ({ actor }) => {
         <Row>
         <Col xs={3}>Person : </Col>
         <Col xs={15}> <NavLink as={Link} to={url}>{actor.name}</NavLink>
-            {/* <NavLink to={url} 
-        onClick = { () => window.location.replace(url)}>{actor.name}</NavLink> */}
         </Col>
         <Col xs={15}>Birth year : {actor.birthYear}</Col>
         <Col xs={15}>Death year : {actor.deathYear}</Col>
@@ -30,7 +28,7 @@ const ActorList = ({ actorList }) =>
     <Container fluid>
         <ListGroup>
             {actorList.map(actor =>
-                <ListGroup.Item>
+                <ListGroup.Item key = {actor.name}>
                     <Actor actor={actor} />
                 </ListGroup.Item>
             )}

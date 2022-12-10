@@ -26,8 +26,6 @@ const TitleById = ({ title }) => {
                     <p>Runtime: {title.runtime}</p>
                     <p>Rating: {title.rating}</p>
                     <NavLink as={Link} to={url}>Bookmark Me!</NavLink>
-                    {/* <p><NavLink to={url} 
-                    onClick = { () => window.location.replace(url)}>Bookmark Me!</NavLink></p> */}
                 </Tab>
 
                 <Tab eventKey="directors" title="Directors">

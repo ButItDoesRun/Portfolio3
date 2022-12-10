@@ -16,7 +16,7 @@ const Season = ({ season }) =>
 const SeasonsAccordion = ({ tvShowContentList }) =>
     <Container fluid>
         <Accordion>
-            {tvShowContentList.map(season => <Season season={season}></Season>)}
+            {tvShowContentList.map(season => <Season key = {season.season} season={season}></Season>)}
         </Accordion>
     </Container>;
 
