@@ -5,7 +5,7 @@ import BookmarksList from '../PageComponents/BookmarksPageComponents/BookmarksLi
 
 const BookmarksPage = () => {
     let [bookmarksContent, setBookmarksContent] = useState(null);
-    const url = "https://localhost:5001/api/user/bookmarks"; 
+    const url = "https://localhost:5001/api/user/bookmarks";
 
     useEffect(() => {
     }, [bookmarksContent]);
@@ -15,7 +15,11 @@ const BookmarksPage = () => {
             <PaginationList url={url} setContent={setBookmarksContent}></PaginationList>
             {(bookmarksContent === null) ?
                 <p>Loading content...</p> :
-                <BookmarksList bookmarkList={bookmarksContent}></BookmarksList>
+                <>
+                    {(bookmarksContent.length > 0) ?
+                        <BookmarksList bookmarkList={bookmarksContent}></BookmarksList> :
+                        <p>No bookmarks</p>}
+                </>
             }
         </Container>
     );

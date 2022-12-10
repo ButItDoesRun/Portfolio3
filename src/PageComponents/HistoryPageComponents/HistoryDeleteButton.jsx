@@ -1,20 +1,16 @@
 import React from 'react';
 import Container from "react-bootstrap/Container";
-import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import ListGroup from 'react-bootstrap/ListGroup';
-import History from './History';
+import Button from 'react-bootstrap/Button';
+import { Link } from "react-router-dom";
 
-
-const HistoryList = ({ historyList }) =>
+const HistoryDeleteButton = () =>
     <Container fluid>
-        <ListGroup>
-            {historyList.map(history =>
-                <ListGroup.Item key={history.content}>
-                    <History history={history} />
-                </ListGroup.Item>
-            )}
-        </ListGroup>
+        <Col md="auto">
+            <Button variant="danger" as={Link} to={"/user/history/delete/"}>
+                Delete search history
+            </Button>
+        </Col>
     </Container>;
 
-export default HistoryList;
+export default HistoryDeleteButton;

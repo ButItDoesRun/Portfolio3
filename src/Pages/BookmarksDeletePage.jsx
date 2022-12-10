@@ -22,7 +22,6 @@ const BookmarksDeletePage = () => {
                 setBookmarkDeleted(result);
             };
             DeleteBookmark(token, id);
-
         }        
         
         if (bookmarkDeleted === false) {

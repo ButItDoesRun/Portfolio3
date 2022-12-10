@@ -28,8 +28,7 @@ const LoginPage = ({ tokenSetter }) => {
                     username={username} setUsername={setUsername}
                     password={password} setPassword={setPassword} />
                 <Row className="justify-content-md-center">
-                    <Col></Col>
-                    <Col>
+                    <Col md="auto">
                         <Button variant="primary" onClick={async () => {
                             const token = await LoginUser(username, password);
                             tokenSetter(token);
@@ -38,12 +37,11 @@ const LoginPage = ({ tokenSetter }) => {
                             Login
                         </Button>
                     </Col>
-                    <Col>
+                    <Col md="auto">
                         <Button variant="primary" as={Link} to="/user/register">
                             Register
                         </Button>
                     </Col>
-                    <Col></Col>
                 </Row>
 
             </Container >

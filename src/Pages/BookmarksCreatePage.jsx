@@ -32,7 +32,6 @@ const BookmarksCreatePage = () => {
         }
     }, [bookmarkCreated]);
 
-
     return (
         <Container fluid>
             <Row>
