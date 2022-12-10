@@ -8,7 +8,7 @@ const ProfessionList = ({ professionList }) =>
     <Container fluid>
         <ListGroup>
             {professionList.map(profession =>
-                <ListGroup.Item>
+                <ListGroup.Item key = {profession}>
                     <Profession profession={profession} />
                 </ListGroup.Item>
             )}

@@ -8,7 +8,7 @@ const DirectorList = ({ directorList }) =>
     <Container fluid>
         <ListGroup>
             {directorList.map(director =>
-                <ListGroup.Item>
+                <ListGroup.Item key = {director.url}>
                     <Director director={director} />
                 </ListGroup.Item>
             )}

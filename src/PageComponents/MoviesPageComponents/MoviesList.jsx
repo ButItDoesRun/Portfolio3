@@ -15,9 +15,6 @@ const Movie = ({ movie }) => {
         <Col xs={3}>Title : </Col>
         <Col xs={15}>
             <NavLink as={Link} to={url}>{movie.name}</NavLink>
-            {/* <NavLink to={url} 
-        onClick = { () => window.location.replace(url)}>{movie.name}
-            </NavLink> */}
         </Col>
         <Col xs={15}>Airing date : {movie.airingDate}</Col>
         <Col xs={15}>Rating : {movie.rating}</Col>

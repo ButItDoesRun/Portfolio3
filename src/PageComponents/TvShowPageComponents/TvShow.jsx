@@ -24,8 +24,6 @@ const TvShow = ({ tvShow }) => {
                     <p>Rating: {tvShow.rating}</p>
                     <p>Airing Date: {tvShow.airingDate}</p>
                     <p><NavLink as={Link} to={url}>Bookmark Me!</NavLink>
-                        {/* <NavLink to={url} 
-                    onClick = { () => window.location.replace(url)}>Bookmark Me!</NavLink> */}
                     </p>
                 </Tab>
 
