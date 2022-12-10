@@ -30,6 +30,8 @@ import BookmarksCreatePage from "./Pages/BookmarksCreatePage";
 import BookmarksDeletePage from "./Pages/BookmarksDeletePage";
 import BookmarksEditPage from "./Pages/BookmarksEditPage";
 import HistoryDeletePage from "./Pages/HistoryDeletePage";
+import UserEditPage from "./Pages/UserEditPage";
+import UserDeletePage from "./Pages/UserDeletePage";
 
 
 const Error = () =>
@@ -98,6 +100,8 @@ const AppRouting = () => {
                     <Route path="/title/cast/:id" element={<TitleCastPage/>} />
                     <Route path="/title/crew/:id" element={<TitleCrewPage/>} />
                     <Route path="/user/register" element={<RegisterPage/>} />
+                    <Route path="/user/edit" element={<UserEditPage/>} />
+                    <Route path="/user/delete" element={<UserDeletePage tokenSetter={setToken}/>} />
                     <Route path="/person/:id" element={<PersonPage/>} />
                     <Route path="/user/bookmarks/create/:id" element={<BookmarksCreatePage/>} />
                     <Route path="/user/bookmarks/delete/:id" element={<BookmarksDeletePage/>} />

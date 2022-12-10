@@ -23,6 +23,9 @@ const BookmarksCreatePage = () => {
     const token = useContext(TokenContext);
 
     useEffect(() => {
+        if (token === null) {
+            navigate("/home");
+        }
         if (bookmarkCreated === false) {
             alert("The bookmark was not created");
         }

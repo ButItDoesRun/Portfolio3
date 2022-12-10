@@ -6,16 +6,16 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
-import DeleteHistory from '../DataService/History';
+import { DeleteUser } from '../DataService/User';
 import TokenContext from '../Context/TokenContext';
 
-const HistoryDeletePage = () => {
+const UserDeletePage = () => {
     const navigate = useNavigate();
-    let [historyDeleted, setHistoryDeleted] = useState(null);
+    let [userDeleted, setUserDeleted] = useState(null);
     const token = useContext(TokenContext);
 
-    async function DeleteUserHistory(token) {
-        const result = await DeleteHistory(token);
+    async function DeleteUserObject(token) {
+        const result = await DeleteUser(token);
         return (result);
     };
 
@@ -23,29 +23,30 @@ const HistoryDeletePage = () => {
         if (token === null) {
             navigate("/home");
         }
-        if (historyDeleted === false) {
+        if (userDeleted === false) {
             alert("An error occured");
-            navigate("/user/history");
+            navigate("/user/");
         }
-        if (historyDeleted === true) {
-            navigate("/user/history");
+        if (userDeleted === true) {
+            navigate("/user/logout");
         }
-    }, [historyDeleted]);
+    }, [userDeleted]);
 
     return (
         <Container fluid>
-            <p>Are you sure you want to delete search history?</p>
+            <h3>Are you sure you want to delete your user?</h3>
+            <p>All data will be deleted. This cannot be undone</p>
             <Row className="justify-content-md-center">
                 <Col md="auto">
                     <Button variant="primary" onClick={async () => {
-                        const result = await DeleteUserHistory(token);
-                        setHistoryDeleted(result);
+                        const result = await DeleteUserObject(token);
+                        setUserDeleted(result);
                     }}>
                         Yes
                     </Button>
                 </Col>
                 <Col md="auto">
-                    <Button variant="danger" as={Link} to="/user/history">
+                    <Button variant="danger" as={Link} to="/user/">
                         No
                     </Button>
                 </Col>
@@ -54,4 +55,4 @@ const HistoryDeletePage = () => {
     );
 };
 
-export default HistoryDeletePage;
+export default UserDeletePage;

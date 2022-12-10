@@ -1,9 +1,7 @@
 import React, { useEffect, useContext, useState } from 'react';
 import { useParams, useNavigate } from "react-router-dom";
 import Container from "react-bootstrap/Container";
-import Button from 'react-bootstrap/Button';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+
 
 import Bookmark from '../DataService/Bookmark';
 import TokenContext from '../Context/TokenContext';
@@ -15,6 +13,9 @@ const BookmarksDeletePage = () => {
     const token = useContext(TokenContext);
 
     useEffect(() => {
+        if (token === null) {
+            navigate("/home");
+        }
         if(bookmarkDeleted === null){
             async function DeleteBookmark(token, id) {
                 const bookmark = new Bookmark(id);

@@ -18,9 +18,17 @@ async function LoginUser(username, password) {
 const LoginPage = ({ tokenSetter }) => {
     let [username, setUsername] = useState("");
     let [password, setPassword] = useState("");
-    let [loggedIn, setLoggedIn] = useState(false)
+    let [loggedIn, setLoggedIn] = useState(null)
 
-    if (!loggedIn) {
+    useEffect(() => {
+        if (loggedIn === false) {
+            alert("Login failed. Please check that the input is correct");
+            setLoggedIn(null);
+        }
+    }, [loggedIn]);
+
+
+    if (!loggedIn || loggedIn === null) {
         return (
             <Container fluid>
                 <h3>Login</h3>
@@ -32,7 +40,11 @@ const LoginPage = ({ tokenSetter }) => {
                         <Button variant="primary" onClick={async () => {
                             const token = await LoginUser(username, password);
                             tokenSetter(token);
-                            if (token !== null) setLoggedIn(true);
+                            if (token !== null) {
+                                setLoggedIn(true);
+                            } else {
+                                setLoggedIn(false);
+                            }
                         }}>
                             Login
                         </Button>

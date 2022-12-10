@@ -16,18 +16,17 @@ class User {
             },
             body: JSON.stringify(user),
         };
-        // console.log(JSON.stringify(user))  
-
+   
         const result = fetch("https://localhost:5001/api/user/register", requestContent)
             .then(res => {
-                return(res.ok);
-            })    
+                return (res.ok);
+            })
             .catch(e => {
                 console.log(e);
-                return(false);
+                return (false);
             });
 
-        return(result);
+        return (result);
     };
 
     async LoginUser() {
@@ -46,34 +45,90 @@ class User {
         try {
             const res = await fetch("https://localhost:5001/api/user/login", requestContent);
             const json = await res.json();
+            if (json.token === undefined) return null;
             return (json.token);
         } catch (e) {
             console.log(e);
             return (null);
         }
-    }; 
-    
+    };
+
+    async UpdateUser(token) {
+        const user = {
+            email: this.email,
+            birthyear: this.birthYear,
+        }
+        const requestContent = {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + token,
+            },
+            body: JSON.stringify(user),
+        };
+
+        try {
+            const res = await fetch("https://localhost:5001/api/user/update", requestContent);
+            return (res.ok);
+        } catch (e) {
+            console.log(e);
+            return (false);
+        }
+    };
+
     async GetUser(token, setUser) {
         if (token != null) {
             const requestContent = {
                 headers: {
                     "Content-Type": "application/json",
-                    "Authorization": "Bearer "+token,
+                    "Authorization": "Bearer " + token,
                 },
             };
             try {
                 const res = await fetch("https://localhost:5001/api/user ", requestContent);
                 const json = await res.json();
                 setUser(json);
-                
+
             } catch (e) {
                 console.log(e);
-                setUser(new User("Unknown","Unknown","Unknown","Unknown"));
+                setUser(new User("Unknown", "Unknown", "Unknown", "Unknown"));
             }
         } else {
-            setUser(new User("Unknown","Unknown","Unknown","Unknown"));
+            setUser(new User("Unknown", "Unknown", "Unknown", "Unknown"));
         }
     }
 }
 
-export default User;
+async function DeleteUser(token){
+    const url = "https://localhost:5001/api/user/delete";
+    
+    if (token != null) {
+        const requestContent = {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + token,
+            },
+        };
+
+        const result = fetch(url, requestContent)
+            .then(res => {
+                return (res.ok);
+            })
+            .catch(e => {
+                console.log(e);
+                return (false);
+            });
+
+        return (result);
+    }
+    return(false);
+
+}
+
+export {
+    User as default,
+    DeleteUser
+}
+
+// export default User;

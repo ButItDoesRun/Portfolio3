@@ -6,9 +6,20 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import HistoryDeleteButton from '../PageComponents/HistoryPageComponents/HistoryDeleteButton';
 
+import TokenContext from '../Context/TokenContext';
+import { useNavigate } from "react-router-dom";
+
 const HistoryPage = () => {
     let [historyContent, setHistoryContent] = useState(null);
     const url = "https://localhost:5001/api/user/history";
+    const token = useContext(TokenContext);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (token === null) {
+            navigate("/home");
+        }
+    }, []);
 
     return (
         <Container>
