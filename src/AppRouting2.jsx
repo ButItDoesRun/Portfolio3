@@ -32,6 +32,7 @@ import BookmarksEditPage from "./Pages/BookmarksEditPage";
 import HistoryDeletePage from "./Pages/HistoryDeletePage";
 import UserEditPage from "./Pages/UserEditPage";
 import UserDeletePage from "./Pages/UserDeletePage";
+import WordCloudWord from "./PageComponents/WordCloudPageComponents/WordCloud";
 
 
 const Error = () =>
@@ -107,6 +108,8 @@ const AppRouting = () => {
                     <Route path="/user/bookmarks/delete/:id" element={<BookmarksDeletePage/>} />
                     <Route path="/user/bookmarks/edit/:id/:name" element={<BookmarksEditPage/>} />
                     <Route path="/user/history/delete" element={<HistoryDeletePage/>} />
+                    <Route path="/person/wordcloud/:name" element={<p>Person wordcloud</p>} />
+                    <Route path="/wordcloud/:word" element={<WordCloudWord></WordCloudWord>}/>
 
                     {/* Routing for errors*/}
                     <Route path="*" element={<Error />} />
