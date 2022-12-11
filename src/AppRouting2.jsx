@@ -109,7 +109,7 @@ const AppRouting = () => {
                     <Route path="/user/bookmarks/edit/:id/:name" element={<BookmarksEditPage/>} />
                     <Route path="/user/history/delete" element={<HistoryDeletePage/>} />
                     <Route path="/person/wordcloud/:name" element={<p>Person wordcloud</p>} />
-                    <Route path="/wordcloud/:word" element={<WordCloudWord></WordCloudWord>}/>
+                    <Route path="/wordcloud/:word" element={<p>Word wordcloud</p>}/>
 
                     {/* Routing for errors*/}
                     <Route path="*" element={<Error />} />
