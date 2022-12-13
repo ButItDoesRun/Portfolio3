@@ -24,12 +24,13 @@ import TvShowPage from "./Pages/TvShowPage";
 import PersonPage from "./Pages/PersonPage";
 import TitleCastPage from "./Pages/TitleCastPage";
 import TitleCrewPage from "./Pages/TitleCrewPage";
-import SearchBar from "./PageComponents/SearchBarComponents/SearchPersonsList";
+//import SearchBar from "./PageComponents/SearchBarComponents/SearchPersonsList";
 import RatingsPage from "./Pages/RatingsPage";
 import BookmarksCreatePage from "./Pages/BookmarksCreatePage";
 import BookmarksDeletePage from "./Pages/BookmarksDeletePage";
 import BookmarksEditPage from "./Pages/BookmarksEditPage";
 import HistoryDeletePage from "./Pages/HistoryDeletePage";
+import SearchBar from "./PageComponents/SearchComponents/SearchBar";
 
 
 const Error = () =>
@@ -42,14 +43,17 @@ const AppRouting = () => {
         <>
             <TokenContext.Provider value={token}>
                 { /*navbar*/}
-                <Navbar bg="light" variant="light">
-                    <Container>
-                        <Nav className="me-auto">
-                            <Navbar.Brand  as={Link} to="/home">OurMovieApp</Navbar.Brand>
-                            <NavLink className="btn" to="/search/:category/:search">Search</NavLink>
+                <Navbar bg="light" variant="light" class="navbar" expand="lg">
+                    <Container id = "navContainer">
+                        <Nav className="flex-row align-items-center">
+                            <Navbar.Brand id = "logo"  as={Link} to="/home">OurMovieApp</Navbar.Brand>
+
+                            <SearchBar></SearchBar>
+                         
                             <NavLink className="btn" to="/titles/movies">Movies</NavLink>
                             <NavLink className="btn" to="/titles/tvshows">Tv Shows</NavLink>
                             <NavLink className="btn" to="/persons/actors">Actors</NavLink>
+                                                 
                             <NavDropdown title="User" id="nav-dropdown">
                                 <NavDropdown.Item as={Link} to="/user">User</NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to="/user/bookmarks">Bookmarks</NavDropdown.Item>

@@ -1,6 +1,64 @@
-.App {
+
+/* .App {
   text-align: center;
+} */
+
+/* Navigation styling */
+
+.navbar { 
+  width:100%;
+  flex-direction: row;
+  display: inline-block;
+  color : blue;
+  align-items : center;
 }
+
+#navContainer{
+  width:100%;
+  flex-direction: row;
+  display: inline-block;
+  margin-left : 2rem;
+  margin-right : 2rem;
+
+}
+#logo{
+  margin-right : 2rem;
+}
+
+#categories{
+  size : sm;
+  max-width: 7rem;
+  display: inline-block;
+}
+
+/* .NavLink{
+  margin: 3rem;
+} */
+
+.btn{
+  margin-right : 1.5rem;
+}
+
+/* #nav-dropdown{
+  margin-left: 1.5rem;
+  
+} */
+
+
+
+
+/* .searchbar{
+  flex-direction: row;
+  color : blue;
+}
+
+.navbar-nav {
+  display: inline-block;
+}
+
+.navbar-nav>li {
+   display: inline-block;
+} */
 
 .App-link {
   color: #61dafb;
