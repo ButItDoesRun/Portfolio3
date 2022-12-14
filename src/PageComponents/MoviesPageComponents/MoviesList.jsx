@@ -27,7 +27,7 @@ const Movie = ({ movie }) => {
 const MoviesList = ({ moviesList }) =>
     <Container fluid>
         <ListGroup>
-            {moviesList.map(movie =>
+            {moviesList?.map(movie =>
                 <ListGroup.Item key={movie.name}>
                     <Movie movie={movie} />
                 </ListGroup.Item>

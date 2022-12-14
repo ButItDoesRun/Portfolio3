@@ -3,19 +3,34 @@ import Container from "react-bootstrap/Container";
 import ListGroup from 'react-bootstrap/ListGroup';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import {NavLink} from "react-router-dom";
+import Button from 'react-bootstrap/Button';
+import {NavLink, Link} from "react-router-dom";
 
 const Rating = ({ rating }) => {
     const lastSegment = rating.url.split("/").pop();
     const url = `/title/${lastSegment}`;
     
     return (
-        <Container>
+        <Container fluid>
         <Row>
-        <Col xs={3}>Title : </Col>
-        <Col xs={15}><NavLink to={url} 
-        onClick = { () => window.location.replace(url)}>{rating.title}</NavLink></Col>
-        <Col xs={15}>Rating : {rating.rating}</Col>
+            <Col xs={12}>
+                Title : 
+                <br></br>
+                <NavLink to={url} 
+                onClick = { () => window.location.replace(url)}>{rating.title}</NavLink>
+                <br></br>
+                Rating : {rating.rating}
+            </Col>
+            <Col md="auto" id = "ratingsEditBtn">
+                <Button variant="primary" as={Link} to={url}>
+                    Edit
+                </Button>
+            </Col>
+            <Col md="auto">
+                <Button variant="danger" as={Link} to={"/user/ratings/delete/" + lastSegment}>
+                    Delete
+                </Button>
+            </Col>
         </Row>
         </Container>
     );

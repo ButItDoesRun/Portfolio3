@@ -6,6 +6,7 @@ import {NavLink, Link, useParams} from "react-router-dom";
 
 // Components
 import SeasonsAccordion from './SeasonsAccordion';
+import RatingComponent from '../RatingsPageComponents/RatingComponent';
 // import DirectorList from '../DirectorList';
 
 const TvShow = ({ tvShow }) => {
@@ -15,6 +16,7 @@ const TvShow = ({ tvShow }) => {
     return(
         <Container fluid>
             <h2>{tvShow.name}</h2>
+            <RatingComponent id = "myRating"></RatingComponent>
             <Tabs
                 defaultActiveKey="facts"
                 id="uncontrolled-tab-example"

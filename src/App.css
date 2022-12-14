@@ -25,6 +25,10 @@
   margin-right : 2rem;
 }
 
+/* .CDBContainer{
+  margin-left: 50%;
+} */
+
 #categories{
   size : sm;
   max-width: 7rem;
@@ -62,5 +66,30 @@
 
 .App-link {
   color: #61dafb;
+}
+
+
+/* rating */
+#myRating{
+  align-items: right;
+  margin-left: 75%;
+  display: inline-block;
+
+}
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.on {
+  color: #000;
+}
+.off {
+  color: #ccc;
+}
+
+#ratingsEditBtn{
+  margin-left: "12rem";
 }
 

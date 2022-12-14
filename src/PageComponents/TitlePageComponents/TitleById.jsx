@@ -7,6 +7,7 @@ import {NavLink, Link} from "react-router-dom";
 // Components
 import DirectorList from './DirectorList';
 import TitleActorList from './TitleActorList'; 
+import RatingComponent from '../RatingsPageComponents/RatingComponent';
 
 const TitleById = ({ title }) => {
     const lastSegment = title.bookmark.split("/").pop();
@@ -14,7 +15,8 @@ const TitleById = ({ title }) => {
 
     return (
         <Container fluid>
-            <h2>{title.title}</h2>
+            <h2>{title.title}</h2> 
+            <RatingComponent id = "myRating"></RatingComponent>
             <Tabs
                 defaultActiveKey="facts"
                 id="uncontrolled-tab-example"
@@ -25,7 +27,7 @@ const TitleById = ({ title }) => {
                     <p>Genre: {title.genre[0]}</p>
                     <p>Runtime: {title.runtime}</p>
                     <p>Rating: {title.rating}</p>
-                    <NavLink as={Link} to={url}>Bookmark Me!</NavLink>
+                    <NavLink as={Link} to={url}>Bookmark Me!</NavLink>                    
                 </Tab>
 
                 <Tab eventKey="directors" title="Directors">

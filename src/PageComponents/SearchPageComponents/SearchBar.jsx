@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 
 const SearchBar = () => {
     const [searchword, setSearchword] = useState('');
-    const [category, setCategory] = useState('title');
+    const [category, setCategory] = useState('titles');
     
     const handleSearch = (event) => {
         setSearchword(event.target.value);
@@ -21,9 +21,9 @@ const SearchBar = () => {
         <>
                 
                 <Form.Select onChange={handleCategory} id = "categories">
-                    <option value = "title">Title</option>
-                    <option value = "person">Person</option>
-                    <option value = "genre">Genre</option>
+                    <option value = "titles">Title</option>
+                    <option value = "actors">Person</option>
+                    <option value = "genres">Genre</option>
                 </Form.Select>
 
                 <input 

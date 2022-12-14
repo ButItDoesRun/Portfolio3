@@ -1,35 +1,65 @@
-// import React, { useEffect, useContext, useState } from 'react';
-// import Container from "react-bootstrap/Container";
-// import PaginationList from '../PageComponents/PaginationList';
-// import BookmarksList from '../PageComponents/BookmarksPageComponents/BookmarksList';
-// import TokenContext from '../Context/TokenContext';
-// import { useNavigate } from "react-router-dom";
+import React, { useEffect, useContext, useState } from 'react';
+import Container from "react-bootstrap/Container";
+import PaginationList from '../PageComponents/PaginationList';
+import SearchGenresList from '../PageComponents/SearchPageComponents/SearchGenresList';
+import SearchPersonsList from '../PageComponents/SearchPageComponents/SearchPersonsList';
+import SearchTitlesList from '../PageComponents/SearchPageComponents/SearchTitlesList';
+import TokenContext from '../Context/TokenContext';
+import { useParams, useNavigate} from "react-router-dom";
 
-// const BookmarksPage = () => {
-//     let [SearchContent, setSearchContent] = useState(null);
-//     const url = "https://localhost:5001/api/user/bookmarks";
-//     const token = useContext(TokenContext);
-//     const navigate = useNavigate();
+const SearchPage = () => {
+    const { category } = useParams();
+    const { search } = useParams();
+    const [searchContent, setSearchContent] = useState(null);
+    // const [resourceUrl, setResourceUrl] = useState('');
+    const url = `https://localhost:5001/api/search/${category}/${search}`;
 
-//     useEffect(() => {
-//         if (token === null) {
-//             navigate("/home");
-//         }
-//     }, []);
+    const token = useContext(TokenContext);
+    const navigate = useNavigate();
 
-//     return (
-//         <Container>
-//             <PaginationList url={url} setContent={setBookmarksContent}></PaginationList>
-//             {(bookmarksContent === null) ?
-//                 <p>Loading content...</p> :
-//                 <>
-//                     {(bookmarksContent.length > 0) ?
-//                         <BookmarksList bookmarkList={bookmarksContent}></BookmarksList> :
-//                         <p>No bookmarks</p>}
-//                 </>
-//             }
-//         </Container>
-//     );
-// };
+    const displaySearchComponent = (searchContent) => {
+        if(category === "titles"){
+            return (<SearchTitlesList searchTitlesList={searchContent}></SearchTitlesList>);
+        }
 
-// export default BookmarksPage;
+        if(category === "actors"){
+            return(<SearchPersonsList searchPersonsList={searchContent}></SearchPersonsList>);
+        }
+
+        if(category === "genres"){
+            return(<SearchGenresList searchGenresList={searchContent}></SearchGenresList>);
+        }  
+    };
+
+    useEffect(() => {
+        if (token === null) {
+            navigate("/user/login");
+            alert("Log in to use search feature");
+        }
+
+    }, []);
+
+    return (
+        <Container>
+            <p>{search}</p>
+            <p>{category}</p>
+            <p>{url}</p>
+           
+
+            <PaginationList url={url} setContent={setSearchContent}></PaginationList>
+            {(searchContent === null) ?
+                <p>Loading content...</p> :
+                <>
+                    {(searchContent.length > 0) ?
+                        displaySearchComponent(searchContent)                
+                    :
+                    <p>Search not found</p> 
+
+                    }
+                </>                
+            }
+        </Container>
+    );
+};
+
+export default SearchPage;

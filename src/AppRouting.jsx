@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useState, useEffect, useContext} from 'react';
+import React, { useState, useEffect, useContext, Component} from 'react';
 import {
     Routes, Route, Link, NavLink, useParams, Outlet, Navigate
 } from "react-router-dom";
@@ -24,13 +24,14 @@ import TvShowPage from "./Pages/TvShowPage";
 import PersonPage from "./Pages/PersonPage";
 import TitleCastPage from "./Pages/TitleCastPage";
 import TitleCrewPage from "./Pages/TitleCrewPage";
-//import SearchBar from "./PageComponents/SearchBarComponents/SearchPersonsList";
 import RatingsPage from "./Pages/RatingsPage";
 import BookmarksCreatePage from "./Pages/BookmarksCreatePage";
 import BookmarksDeletePage from "./Pages/BookmarksDeletePage";
 import BookmarksEditPage from "./Pages/BookmarksEditPage";
 import HistoryDeletePage from "./Pages/HistoryDeletePage";
-import SearchBar from "./PageComponents/SearchComponents/SearchBar";
+import SearchPage from "./Pages/SearchPage";
+import SearchBar from "./PageComponents/SearchPageComponents/SearchBar";
+import RatingsDeletePage from "./Pages/RatingsDeletePage";
 
 
 const Error = () =>
@@ -43,7 +44,7 @@ const AppRouting = () => {
         <>
             <TokenContext.Provider value={token}>
                 { /*navbar*/}
-                <Navbar bg="light" variant="light" class="navbar" expand="lg">
+                <Navbar bg="light" variant="light" expand="lg">
                     <Container id = "navContainer">
                         <Nav className="flex-row align-items-center">
                             <Navbar.Brand id = "logo"  as={Link} to="/home">OurMovieApp</Navbar.Brand>
@@ -92,11 +93,7 @@ const AppRouting = () => {
 
 
                     {/* Routing for other components */}
-                    <Route path="/search/:category/:search" element={<p>SearchBar</p>} />
-
-                    {/* <Route path="/search/actors/:search" element={<p>this is where the search actor element goes</p>} />
-            <Route path="/search/titles/:search" element={<p>this is where the title search element goes</p>} />
-            <Route path="/search/genres/:search" element={<p>this is where the genresmovieList element goes</p>} /> */}
+                    <Route path="/search/:category/:search" element={<SearchPage/> } />                    
                     <Route path="/title/:id" element={<TitlePage/>} />
                     <Route path="/title/tvshow/:id" element={<TvShowPage/>} />
                     <Route path="/title/cast/:id" element={<TitleCastPage/>} />
@@ -107,6 +104,8 @@ const AppRouting = () => {
                     <Route path="/user/bookmarks/delete/:id" element={<BookmarksDeletePage/>} />
                     <Route path="/user/bookmarks/edit/:id" element={<BookmarksEditPage/>} />
                     <Route path="/user/history/delete" element={<HistoryDeletePage/>} />
+                    <Route path="/user/ratings/delete/:id" element={<RatingsDeletePage/>} />
+                    
 
                     {/* Routing for errors*/}
                     <Route path="*" element={<Error />} />
