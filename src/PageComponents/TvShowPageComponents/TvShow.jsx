@@ -1,26 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
 import Container from "react-bootstrap/Container";
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import {NavLink, Link, useParams} from "react-router-dom";
+import TokenContext from '../../Context/TokenContext';
 
 // Components
 import SeasonsAccordion from './SeasonsAccordion';
 import RatingComponent from '../RatingsPageComponents/RatingComponent';
-// import TokenContext from '../../Context/TokenContext';
 // import DirectorList from '../DirectorList';
 
 const TvShow = ({ tvShow }) => {
     const base = "/user/bookmarks/create/"; 
     const {id} = useParams();
     const url = base + id;
-    // const token = useContext(TokenContext);
+    const token = useContext(TokenContext);
+
     return(
         <Container fluid>
             <h2>{tvShow.name}</h2>
-            {/* {(token === null) ? 
+            {(token === null) ? 
                 console.log("rating is hidden") :
-                <RatingComponent id = "myRating"></RatingComponent> }   */}
+                <RatingComponent id = "myRating"></RatingComponent> }  
             <Tabs
                 defaultActiveKey="facts"
                 id="uncontrolled-tab-example"
@@ -29,8 +30,11 @@ const TvShow = ({ tvShow }) => {
                 <Tab eventKey="facts" title="Facts">
                     <p>Rating: {tvShow.rating}</p>
                     <p>Airing Date: {tvShow.airingDate}</p>
+
+                    {(token === null) ? 
+                    console.log("bookmarking is hidden") :
                     <p><NavLink as={Link} to={url}>Bookmark Me!</NavLink>
-                    </p>
+                    </p>}
                 </Tab>
 
                 <Tab eventKey="seasons" title="Seasons">
