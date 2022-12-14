@@ -7,16 +7,20 @@ import {NavLink, Link, useParams} from "react-router-dom";
 // Components
 import SeasonsAccordion from './SeasonsAccordion';
 import RatingComponent from '../RatingsPageComponents/RatingComponent';
+// import TokenContext from '../../Context/TokenContext';
 // import DirectorList from '../DirectorList';
 
 const TvShow = ({ tvShow }) => {
     const base = "/user/bookmarks/create/"; 
     const {id} = useParams();
     const url = base + id;
+    // const token = useContext(TokenContext);
     return(
         <Container fluid>
             <h2>{tvShow.name}</h2>
-            <RatingComponent id = "myRating"></RatingComponent>
+            {/* {(token === null) ? 
+                console.log("rating is hidden") :
+                <RatingComponent id = "myRating"></RatingComponent> }   */}
             <Tabs
                 defaultActiveKey="facts"
                 id="uncontrolled-tab-example"

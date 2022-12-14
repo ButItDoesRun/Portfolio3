@@ -45,12 +45,15 @@ const AppRouting = () => {
         <>
             <TokenContext.Provider value={token}>
                 { /*navbar*/}
-                <Navbar bg="black" variant="light" expand="lg">
+                <Navbar bg="light" variant="light" expand="lg">
                     <Container id = "navContainer">
                         <Nav className="flex-row align-items-center">
                             <Navbar.Brand id = "logo"  as={Link} to="/home">OurMovieApp</Navbar.Brand>
 
-                            <SearchBar></SearchBar>
+                            {(token === null) ? 
+                            <NavLink className="btn" 
+                            to="/user/login">Log in to use search feature</NavLink> :
+                            <SearchBar></SearchBar>}
                          
                             <NavLink className="btn" to="/titles/movies">Movies</NavLink>
                             <NavLink className="btn" to="/titles/tvshows">Tv Shows</NavLink>

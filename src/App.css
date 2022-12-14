@@ -1,11 +1,12 @@
 .App {
   text-align: center;
-  background-color: #AA0000;
+  /* background-color: #AA0000;
   text-decoration-color: #E44D2E;
   background-image: image-set('./red_background.jpg');
   text-decoration: #8a1253 ;
-  color-scheme: #8a1253;
+  color-scheme: #8a1253; */
 }
+/*
 html{
   background-color: #E44D2E;
 
@@ -16,12 +17,12 @@ html, body{
   text-shadow: #000;
   text-decoration-color: #000;
 
-}
+} */
 
 
 
 /* Navigation styling */
-#top{
+/* #top{
   background-color: #AA0000;
 }
 
@@ -80,16 +81,16 @@ html, body{
 #movies{
   background-color: yellow;
 
-}
+} */
 
 /* rating */
-#myRating{
+/* #myRating{
   align-items: right;
   margin-left: 35%;
   display: inline-block;
   color : orange;
 
-}
+} */
 button {
   background-color: transparent;
   border: none;
@@ -103,7 +104,7 @@ button {
   color: #ccc;
 }
 
-#ratingsEditBtn{
+/* #ratingsEditBtn{
   margin-left: "12rem";
-}
+} */
 
