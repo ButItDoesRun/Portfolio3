@@ -32,6 +32,7 @@ import HistoryDeletePage from "./Pages/HistoryDeletePage";
 import SearchPage from "./Pages/SearchPage";
 import SearchBar from "./PageComponents/SearchPageComponents/SearchBar";
 import RatingsDeletePage from "./Pages/RatingsDeletePage";
+import WelcomePage from "./Pages/WelcomePage";
 
 
 const Error = () =>
@@ -44,7 +45,7 @@ const AppRouting = () => {
         <>
             <TokenContext.Provider value={token}>
                 { /*navbar*/}
-                <Navbar bg="light" variant="light" expand="lg">
+                <Navbar bg="black" variant="light" expand="lg">
                     <Container id = "navContainer">
                         <Nav className="flex-row align-items-center">
                             <Navbar.Brand id = "logo"  as={Link} to="/home">OurMovieApp</Navbar.Brand>
@@ -77,7 +78,7 @@ const AppRouting = () => {
                 { /* ... and here is what happens when you click them */}
                 <Routes>
                     {/* Routing for startpage */}
-                    <Route path="/home" element={<p>This is home page</p>} />   
+                    <Route path="/home" element={<WelcomePage></WelcomePage>} />   
                     <Route path="/" element={<Navigate replace to="/home" />} />
 
                     {/* Routing for navbar */}

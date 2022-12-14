@@ -21,9 +21,6 @@ const RatingComponent = () => {
 
 
     useEffect(() => {
-        if (token === null) {
-            navigate("/home");
-        }
 
         if (ratingCreated === false) {
             alert("Error: The title has not been rated");

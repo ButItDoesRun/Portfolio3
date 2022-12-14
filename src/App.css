@@ -1,16 +1,47 @@
-
-/* .App {
+.App {
   text-align: center;
-} */
+  background-color: #AA0000;
+  text-decoration-color: #E44D2E;
+  background-image: image-set('./red_background.jpg');
+  text-decoration: #8a1253 ;
+  color-scheme: #8a1253;
+}
+html{
+  background-color: #E44D2E;
+
+}
+html, body{
+  background-color: #AA0000;
+  color : black;
+  text-shadow: #000;
+  text-decoration-color: #000;
+
+}
+Form.Select{
+  background-color: green;
+
+}
+
 
 /* Navigation styling */
+#top{
+  background-color: #AA0000;
+}
+
+.Container{
+  background-color: #AA0000;
+
+}
 
 .navbar { 
   width:100%;
   flex-direction: row;
   display: inline-block;
-  color : blue;
+  color :#fda403; 
   align-items : center;
+  background-color: #d50000;  width: max-content;
+  height: max-content;
+  width:max-content;
 }
 
 #navContainer{
@@ -19,15 +50,14 @@
   display: inline-block;
   margin-left : 2rem;
   margin-right : 2rem;
-
+  background: rgb(142,29,1);
+  background: linear-gradient(90deg, rgba(220,4,0,1) 0%, rgba(222,33,81,1) 35%, rgba(255,62,27,1) 100%);
 }
 #logo{
   margin-right : 2rem;
+  color : black;
+  text-shadow: 2rem;
 }
-
-/* .CDBContainer{
-  margin-left: 50%;
-} */
 
 #categories{
   size : sm;
@@ -35,45 +65,32 @@
   display: inline-block;
 }
 
-/* .NavLink{
+.NavLink{
   margin: 3rem;
-} */
+  color :#fda403; 
+}
 
 .btn{
   margin-right : 1.5rem;
+
 }
-
-/* #nav-dropdown{
-  margin-left: 1.5rem;
-  
-} */
-
-
-
-
-/* .searchbar{
-  flex-direction: row;
-  color : blue;
-}
-
-.navbar-nav {
-  display: inline-block;
-}
-
-.navbar-nav>li {
-   display: inline-block;
-} */
 
 .App-link {
-  color: #61dafb;
+  color: rgb(255, 39, 126);
 }
 
+
+#movies{
+  background-color: yellow;
+
+}
 
 /* rating */
 #myRating{
   align-items: right;
-  margin-left: 75%;
+  margin-left: 35%;
   display: inline-block;
+  color : orange;
 
 }
 button {

@@ -41,9 +41,9 @@ const SearchPage = () => {
 
     return (
         <Container>
-            <p>{search}</p>
+            {/* <p>{search}</p>
             <p>{category}</p>
-            <p>{url}</p>
+            <p>{url}</p> */}
            
 
             <PaginationList url={url} setContent={setSearchContent}></PaginationList>
