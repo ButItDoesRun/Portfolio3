@@ -13,6 +13,7 @@ const SearchPage = () => {
     const [searchContent, setSearchContent] = useState(null);
     // const [resourceUrl, setResourceUrl] = useState('');
     const url = `https://localhost:5001/api/search/${category}/${search}`;
+    // let [searchUpdate, searchUpdate = useState(null)];
 
     const token = useContext(TokenContext);
     const navigate = useNavigate();
@@ -37,7 +38,7 @@ const SearchPage = () => {
             alert("Log in to use search feature");
         }
 
-    }, []);
+    }, [searchContent]);
 
     return (
         <Container>
@@ -58,6 +59,7 @@ const SearchPage = () => {
                     }
                 </>                
             }
+            {console.log(searchContent)}
         </Container>
     );
 };
