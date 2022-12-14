@@ -10,7 +10,7 @@ const BookmarkForm = ({ name, setName }) => {
                     <Form.Label>Name your bookmark:</Form.Label>
                     <Form.Control
                         type="text"
-                        placeholder="Username"
+                        placeholder="Bookmark name"
                         value={name}
                         onChange={e => setName(e.target.value)} />
                 </Form.Group>
