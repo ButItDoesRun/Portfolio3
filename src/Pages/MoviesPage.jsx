@@ -4,7 +4,7 @@ import PaginationListNoToken from '../PageComponents/PaginationListNoToken';
 import MoviesList from '../PageComponents/MoviesPageComponents/MoviesList';
 
 const MoviesPage = () => {
-    let [moviesContent, setMoviesContent] = useState(null);
+    let [moviesContent, setMoviesContent] = useState();
     const url = "https://localhost:5001/api/titles/movies"; 
 
     useEffect(() => {

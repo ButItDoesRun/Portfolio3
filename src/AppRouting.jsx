@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useState, useEffect, useContext} from 'react';
+import React, { useState, useEffect, useContext, Component} from 'react';
 import {
     Routes, Route, Link, NavLink, useParams, Outlet, Navigate
 } from "react-router-dom";
@@ -24,12 +24,15 @@ import TvShowPage from "./Pages/TvShowPage";
 import PersonPage from "./Pages/PersonPage";
 import TitleCastPage from "./Pages/TitleCastPage";
 import TitleCrewPage from "./Pages/TitleCrewPage";
-import SearchBar from "./PageComponents/SearchBarComponents/SearchPersonsList";
 import RatingsPage from "./Pages/RatingsPage";
 import BookmarksCreatePage from "./Pages/BookmarksCreatePage";
 import BookmarksDeletePage from "./Pages/BookmarksDeletePage";
 import BookmarksEditPage from "./Pages/BookmarksEditPage";
 import HistoryDeletePage from "./Pages/HistoryDeletePage";
+import SearchPage from "./Pages/SearchPage";
+import SearchBar from "./PageComponents/SearchPageComponents/SearchBar";
+import RatingsDeletePage from "./Pages/RatingsDeletePage";
+import WelcomePage from "./Pages/WelcomePage";
 
 
 const Error = () =>
@@ -42,14 +45,20 @@ const AppRouting = () => {
         <>
             <TokenContext.Provider value={token}>
                 { /*navbar*/}
-                <Navbar bg="light" variant="light">
-                    <Container>
-                        <Nav className="me-auto">
-                            <Navbar.Brand  as={Link} to="/home">OurMovieApp</Navbar.Brand>
-                            <NavLink className="btn" to="/search/:category/:search">Search</NavLink>
+                <Navbar bg="light" variant="light" expand="lg">
+                    <Container id = "navContainer">
+                        <Nav className="flex-row align-items-center">
+                            <Navbar.Brand id = "logo"  as={Link} to="/home">OurMovieApp</Navbar.Brand>
+
+                            {(token === null) ? 
+                            <NavLink className="btn" 
+                            to="/user/login">Log in to use search feature</NavLink> :
+                            <SearchBar></SearchBar>}
+                         
                             <NavLink className="btn" to="/titles/movies">Movies</NavLink>
                             <NavLink className="btn" to="/titles/tvshows">Tv Shows</NavLink>
                             <NavLink className="btn" to="/persons/actors">Actors</NavLink>
+                                                 
                             <NavDropdown title="User" id="nav-dropdown">
                                 <NavDropdown.Item as={Link} to="/user">User</NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to="/user/bookmarks">Bookmarks</NavDropdown.Item>
@@ -72,7 +81,7 @@ const AppRouting = () => {
                 { /* ... and here is what happens when you click them */}
                 <Routes>
                     {/* Routing for startpage */}
-                    <Route path="/home" element={<p>This is home page</p>} />   
+                    <Route path="/home" element={<WelcomePage></WelcomePage>} />   
                     <Route path="/" element={<Navigate replace to="/home" />} />
 
                     {/* Routing for navbar */}
@@ -88,11 +97,7 @@ const AppRouting = () => {
 
 
                     {/* Routing for other components */}
-                    <Route path="/search/:category/:search" element={<p>SearchBar</p>} />
-
-                    {/* <Route path="/search/actors/:search" element={<p>this is where the search actor element goes</p>} />
-            <Route path="/search/titles/:search" element={<p>this is where the title search element goes</p>} />
-            <Route path="/search/genres/:search" element={<p>this is where the genresmovieList element goes</p>} /> */}
+                    <Route path="/search/:category/:search" element={<SearchPage/> } />                    
                     <Route path="/title/:id" element={<TitlePage/>} />
                     <Route path="/title/tvshow/:id" element={<TvShowPage/>} />
                     <Route path="/title/cast/:id" element={<TitleCastPage/>} />
@@ -103,6 +108,8 @@ const AppRouting = () => {
                     <Route path="/user/bookmarks/delete/:id" element={<BookmarksDeletePage/>} />
                     <Route path="/user/bookmarks/edit/:id" element={<BookmarksEditPage/>} />
                     <Route path="/user/history/delete" element={<HistoryDeletePage/>} />
+                    <Route path="/user/ratings/delete/:id" element={<RatingsDeletePage/>} />
+                    
 
                     {/* Routing for errors*/}
                     <Route path="*" element={<Error />} />
