@@ -18,7 +18,7 @@ async function LoginUser(username, password) {
 const LoginPage = ({ tokenSetter }) => {
     let [username, setUsername] = useState("");
     let [password, setPassword] = useState("");
-    let [loggedIn, setLoggedIn] = useState(null)
+    let [loggedIn, setLoggedIn] = useState(null);
 
     useEffect(() => {
         if (loggedIn === false) {
