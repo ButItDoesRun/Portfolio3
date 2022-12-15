@@ -33,7 +33,9 @@ import SearchPage from "./Pages/SearchPage";
 import SearchBar from "./PageComponents/SearchPageComponents/SearchBar";
 import RatingsDeletePage from "./Pages/RatingsDeletePage";
 import WelcomePage from "./Pages/WelcomePage";
-import WordCloudWord from "./PageComponents/WordCloudPageComponents/WordCloud";
+
+import WordCloudPersonPage from "./Pages/WordCloudPersonPage";
+import WordCloudWordPage from "./Pages/WordCloudWordPage";
 
 const Error = () =>
     <div>404: Woops! I don't know that path</div>;
@@ -109,8 +111,8 @@ const AppRouting = () => {
                     <Route path="/user/bookmarks/edit/:id" element={<BookmarksEditPage/>} />
                     <Route path="/user/history/delete" element={<HistoryDeletePage/>} />
                     <Route path="/user/ratings/delete/:id" element={<RatingsDeletePage/>} />
-                    <Route path="/person/wordcloud/:name" element={<WordCloudWord/>} />
-                    <Route path="/wordcloud/:word" element={<p>Word wordcloud</p>}/>
+                    <Route path="/person/wordcloud/:name" element={<WordCloudPersonPage/>} />
+                    <Route path="/wordcloud/:word" element={<WordCloudWordPage/>}/>
 
                     {/* Routing for errors*/}
                     <Route path="*" element={<Error />} />

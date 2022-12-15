@@ -1,27 +1,29 @@
 import React from 'react';
-// import $ from "jquery";
-// import jqcloud from 'jqcloud2';
+import ReactWordcloud from 'react-wordcloud';
+import Container from "react-bootstrap/Container";
+import { useNavigate } from "react-router-dom";
 
-const WordCloudWord = ({ }) => {
-    // var words = [
-    //     {text: "Lorem", weight: 13},
-    //     {text: "Ipsum", weight: 10.5},
-    //     {text: "Dolor", weight: 9.4},
-    //     {text: "Sit", weight: 8},
-    //     {text: "Amet", weight: 6.2},
-    //     {text: "Consectetur", weight: 5},
-    //     {text: "Adipiscing", weight: 5},
-    //   ];
-    //   $('#keywords').jQCloud(words, {
-    //     width: 500,
-    //     height: 350
-    //   });
+const WordCloud = ({ words }) => {
+    const navigate = useNavigate();
+
+    const options = {
+        rotations: 0,
+        fontFamily: 'impact',
+        fontSizes: [10, 80],
+        transitionDuration: 1000,
+        maxWords: 100,
+        enableTooltip: false
+    };
+
+    const callbacks = {
+        onWordClick: (word) => navigate("/wordcloud/" + word.text)
+    }
 
     return (
-        <div id="keywords" width="50%" height="50%"></div>
-        // <div id="demo">
-        // </div>
+        <Container fluid>
+            <ReactWordcloud words={words} options={options} callbacks={callbacks} />
+        </Container>
     );
 };
 
-export default WordCloudWord;
+export default WordCloud;
