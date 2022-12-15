@@ -6,6 +6,8 @@ import Button from 'react-bootstrap/Button';
 
 import User from '../DataService/User';
 import RegisterForm from '../PageComponents/RegisterPageComponents/RegisterForm';
+import ValidateEmail from '../ValidationFunctions/ValidateEmail';
+import ValidatePassword from '../ValidationFunctions/ValidatePassword';
 
 async function RegisterUser(username, password, email, birthyear) {
     const user = new User(username, password, email, birthyear);
@@ -22,6 +24,23 @@ const RegisterPage = () => {
     let [password, setPassword] = useState("");
     let [birthyear, setBirthyear] = useState(startYear);
     let [isRegistered, setIsRegistered] = useState(null);
+
+    let [passwordFeedback, setPasswordFeedback] = useState("");
+    let [emailFeedback, setEmailFeedback] = useState("");
+    let [isValid, setIsValid] = useState(false);
+
+    useEffect(() => {
+        const passwordValidation = ValidatePassword(password);
+        setPasswordFeedback(passwordValidation.feedback);
+
+        const emailValidation = ValidateEmail(email);
+        setEmailFeedback(emailValidation.feedback);
+
+        if (emailValidation.Ok && passwordValidation.Ok) {
+            setIsValid(true);
+        }
+
+    }, [password, email]);
 
     useEffect(() => {
         if (isRegistered === false) {
@@ -41,9 +60,13 @@ const RegisterPage = () => {
                 />
                 <Row>
                     <Col>
+                    <p>{emailFeedback}</p>
+                    <p>{passwordFeedback}</p>
                         <Button variant="primary" onClick={async () => {
-                            const result = await RegisterUser(username, password, email, birthyear);
-                            setIsRegistered(result);
+                            if (isValid) {
+                                const result = await RegisterUser(username, password, email, birthyear);
+                                setIsRegistered(result);
+                            }
                         }}>
                             Register
                         </Button>
