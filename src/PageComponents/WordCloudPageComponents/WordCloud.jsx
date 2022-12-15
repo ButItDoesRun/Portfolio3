@@ -1,7 +1,9 @@
 import React from 'react';
+// import $ from "jquery";
+// import jqcloud from 'jqcloud2';
 
 const WordCloudWord = ({ }) => {
-    // const data = [
+    // var words = [
     //     {text: "Lorem", weight: 13},
     //     {text: "Ipsum", weight: 10.5},
     //     {text: "Dolor", weight: 9.4},
@@ -9,18 +11,17 @@ const WordCloudWord = ({ }) => {
     //     {text: "Amet", weight: 6.2},
     //     {text: "Consectetur", weight: 5},
     //     {text: "Adipiscing", weight: 5},
-    // ];
+    //   ];
+    //   $('#keywords').jQCloud(words, {
+    //     width: 500,
+    //     height: 350
+    //   });
 
-    // return (
-    //     <>
-    //         <script src="https://code.jquery.com/jquery-3.6.2.min.js"></script>
-    //         <script src="bower_components/jqcloud2/dist/jqcloud.min.js"></script>
-    //         <link rel="stylesheet" href="bower_components/jqcloud2/dist/jqcloud.min.css"></link>
-    //         <div>
-    //             {$('#demo').jQCloud(data)}
-    //         </div>
-    //     </>
-    // )
-}
+    return (
+        <div id="keywords" width="50%" height="50%"></div>
+        // <div id="demo">
+        // </div>
+    );
+};
 
 export default WordCloudWord;
