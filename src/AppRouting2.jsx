@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, Component} from 'react';
 import {
     Routes, Route, Link, NavLink, useParams, Outlet, Navigate
 } from "react-router-dom";
@@ -24,16 +24,16 @@ import TvShowPage from "./Pages/TvShowPage";
 import PersonPage from "./Pages/PersonPage";
 import TitleCastPage from "./Pages/TitleCastPage";
 import TitleCrewPage from "./Pages/TitleCrewPage";
-import SearchBar from "./PageComponents/SearchBarComponents/SearchPersonsList";
 import RatingsPage from "./Pages/RatingsPage";
 import BookmarksCreatePage from "./Pages/BookmarksCreatePage";
 import BookmarksDeletePage from "./Pages/BookmarksDeletePage";
 import BookmarksEditPage from "./Pages/BookmarksEditPage";
 import HistoryDeletePage from "./Pages/HistoryDeletePage";
-import UserEditPage from "./Pages/UserEditPage";
-import UserDeletePage from "./Pages/UserDeletePage";
+import SearchPage from "./Pages/SearchPage";
+import SearchBar from "./PageComponents/SearchPageComponents/SearchBar";
+import RatingsDeletePage from "./Pages/RatingsDeletePage";
+import WelcomePage from "./Pages/WelcomePage";
 import WordCloudWord from "./PageComponents/WordCloudPageComponents/WordCloud";
-
 
 const Error = () =>
     <div>404: Woops! I don't know that path</div>;
@@ -45,14 +45,20 @@ const AppRouting = () => {
         <>
             <TokenContext.Provider value={token}>
                 { /*navbar*/}
-                <Navbar bg="light" variant="light">
-                    <Container>
-                        <Navbar.Brand href="/home">OurMovieApp</Navbar.Brand>
-                        <Nav className="me-auto">
-                            <NavLink className="btn" to="/search/:category/:search">Search</NavLink>
+                <Navbar bg="light" variant="light" expand="lg">
+                    <Container id = "navContainer">
+                        <Nav className="flex-row align-items-center">
+                            <Navbar.Brand id = "logo"  as={Link} to="/home">OurMovieApp</Navbar.Brand>
+
+                            {(token === null) ? 
+                            <NavLink className="btn" 
+                            to="/user/login">Log in to use search feature</NavLink> :
+                            <SearchBar></SearchBar>}
+                         
                             <NavLink className="btn" to="/titles/movies">Movies</NavLink>
                             <NavLink className="btn" to="/titles/tvshows">Tv Shows</NavLink>
                             <NavLink className="btn" to="/persons/actors">Actors</NavLink>
+                                                 
                             <NavDropdown title="User" id="nav-dropdown">
                                 <NavDropdown.Item as={Link} to="/user">User</NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to="/user/bookmarks">Bookmarks</NavDropdown.Item>
@@ -75,7 +81,7 @@ const AppRouting = () => {
                 { /* ... and here is what happens when you click them */}
                 <Routes>
                     {/* Routing for startpage */}
-                    <Route path="/home" element={<p>This is home page</p>} />
+                    <Route path="/home" element={<WelcomePage></WelcomePage>} />   
                     <Route path="/" element={<Navigate replace to="/home" />} />
 
                     {/* Routing for navbar */}
@@ -91,24 +97,19 @@ const AppRouting = () => {
 
 
                     {/* Routing for other components */}
-                    <Route path="/search/:category/:search" element={<SearchBar/>} />
-
-                    {/* <Route path="/search/actors/:search" element={<p>this is where the search actor element goes</p>} />
-            <Route path="/search/titles/:search" element={<p>this is where the title search element goes</p>} />
-            <Route path="/search/genres/:search" element={<p>this is where the genresmovieList element goes</p>} /> */}
+                    <Route path="/search/:category/:search" element={<SearchPage/> } />                    
                     <Route path="/title/:id" element={<TitlePage/>} />
                     <Route path="/title/tvshow/:id" element={<TvShowPage/>} />
                     <Route path="/title/cast/:id" element={<TitleCastPage/>} />
                     <Route path="/title/crew/:id" element={<TitleCrewPage/>} />
                     <Route path="/user/register" element={<RegisterPage/>} />
-                    <Route path="/user/edit" element={<UserEditPage/>} />
-                    <Route path="/user/delete" element={<UserDeletePage tokenSetter={setToken}/>} />
                     <Route path="/person/:id" element={<PersonPage/>} />
                     <Route path="/user/bookmarks/create/:id" element={<BookmarksCreatePage/>} />
                     <Route path="/user/bookmarks/delete/:id" element={<BookmarksDeletePage/>} />
-                    <Route path="/user/bookmarks/edit/:id/:name" element={<BookmarksEditPage/>} />
+                    <Route path="/user/bookmarks/edit/:id" element={<BookmarksEditPage/>} />
                     <Route path="/user/history/delete" element={<HistoryDeletePage/>} />
-                    <Route path="/person/wordcloud/:name" element={<p>Person wordcloud</p>} />
+                    <Route path="/user/ratings/delete/:id" element={<RatingsDeletePage/>} />
+                    <Route path="/person/wordcloud/:name" element={<WordCloudWord/>} />
                     <Route path="/wordcloud/:word" element={<p>Word wordcloud</p>}/>
 
                     {/* Routing for errors*/}
