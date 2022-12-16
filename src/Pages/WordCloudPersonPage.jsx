@@ -21,8 +21,6 @@ const WordCloudPersonPage = () => {
         getWords(name, setWords);
     }, []);
 
-    console.log(words);
-
     return (
         <Container>
             {(words === null)
