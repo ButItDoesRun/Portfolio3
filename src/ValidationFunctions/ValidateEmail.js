@@ -1,6 +1,13 @@
+import ValidateText from "./ValidateText";
+
 function ValidateEmail(text) {
     let feedback = "";
     let result = true;
+
+    const validText = ValidateText(text);
+    if (!validText.Ok) {
+        return (validText);
+    }
 
     const at = new RegExp('@');
     const containsAt = at.test(text);
@@ -8,11 +15,12 @@ function ValidateEmail(text) {
     if (!containsAt || !containsDot) {
         feedback = "Please input a valid email";
         result = false;
-    } 
+    }
 
-    return({
-        "feedback" : feedback,
-        "Ok" : result,
+
+    return ({
+        "feedback": feedback,
+        "Ok": result,
     });
 }
 

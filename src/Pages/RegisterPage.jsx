@@ -8,6 +8,8 @@ import User from '../DataService/User';
 import RegisterForm from '../PageComponents/RegisterPageComponents/RegisterForm';
 import ValidateEmail from '../ValidationFunctions/ValidateEmail';
 import ValidatePassword from '../ValidationFunctions/ValidatePassword';
+import ValidateText from '../ValidationFunctions/ValidateText';
+import { Alert } from 'react-bootstrap';
 
 async function RegisterUser(username, password, email, birthyear) {
     const user = new User(username, password, email, birthyear);
@@ -25,8 +27,10 @@ const RegisterPage = () => {
     let [birthyear, setBirthyear] = useState(startYear);
     let [isRegistered, setIsRegistered] = useState(null);
 
+    //validation
     let [passwordFeedback, setPasswordFeedback] = useState("");
     let [emailFeedback, setEmailFeedback] = useState("");
+    let [usernameFeedback, setUsernameFeedback] = useState("");
     let [isValid, setIsValid] = useState(false);
 
     useEffect(() => {
@@ -36,11 +40,13 @@ const RegisterPage = () => {
         const emailValidation = ValidateEmail(email);
         setEmailFeedback(emailValidation.feedback);
 
-        if (emailValidation.Ok && passwordValidation.Ok) {
+        const usernameValidation = ValidateText(username);
+        setUsernameFeedback(usernameValidation.feedback);
+
+        if (emailValidation.Ok && passwordValidation.Ok && usernameValidation.Ok) {
             setIsValid(true);
         }
-
-    }, [password, email]);
+    }, [username, password, email]);
 
     useEffect(() => {
         if (isRegistered === false) {
@@ -60,12 +66,15 @@ const RegisterPage = () => {
                 />
                 <Row>
                     <Col>
+                    <p>{usernameFeedback}</p>
                     <p>{emailFeedback}</p>
                     <p>{passwordFeedback}</p>
                         <Button variant="primary" onClick={async () => {
                             if (isValid) {
                                 const result = await RegisterUser(username, password, email, birthyear);
                                 setIsRegistered(result);
+                            } else {
+                                alert("Please type a valid input");
                             }
                         }}>
                             Register

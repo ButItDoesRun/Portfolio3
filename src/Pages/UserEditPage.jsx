@@ -8,6 +8,8 @@ import User from '../DataService/User';
 import { useNavigate, Link } from "react-router-dom";
 import TokenContext from '../Context/TokenContext';
 import UserForm from '../PageComponents/UserPageComponents/UserForm';
+import ValidateText from '../ValidationFunctions/ValidateText';
+import ValidateEmail from '../ValidationFunctions/ValidateEmail';
 
 async function EditUser(username, email, birthyear, token) {
     const user = new User(username, "Unknown", email, birthyear);
@@ -39,6 +41,19 @@ const UserEditPage = () => {
         setBirthyear(user.birthYear);
     }, [token, user]);
 
+    //validation
+    let [emailFeedback, setEmailFeedback] = useState("");
+    let [isValid, setIsValid] = useState(false);
+
+    useEffect(() => {
+        const emailValidation = ValidateEmail(email);
+        setEmailFeedback(emailValidation.feedback);
+
+        if (emailValidation.Ok) {
+            setIsValid(true);
+        }
+    }, [user.username, email]);
+
     useEffect(() => {
         if (isEdited === false) {
             alert("Error: User was not edited");
@@ -59,10 +74,15 @@ const UserEditPage = () => {
                     selectStartYear={startYear} selectEndYear={endYear}
                 />
                 <Row>
+                    <p>{emailFeedback}</p>
                     <Col>
                         <Button variant="primary" onClick={async () => {
-                            const result = await EditUser(user.username, email, birthyear, token);
-                            setIsEdited(result);
+                            if (isValid) {
+                                const result = await EditUser(user.username, email, birthyear, token);
+                                setIsEdited(result);
+                            } else {
+                                alert("Please type a valid input");
+                            }
                         }}>
                             Submit
                         </Button>

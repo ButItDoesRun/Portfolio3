@@ -8,7 +8,7 @@ const UserForm = ({ email, setEmail, birthyear, setBirthyear, selectStartYear, s
         <Container fluid>
             <Form>
                 <Form.Group className="mb-3" controlId="name">
-                    <Form.Label>Name your bookmark:</Form.Label>
+                    <Form.Label>Email</Form.Label>
                     <Form.Control
                         type="text"
                         placeholder="Username"

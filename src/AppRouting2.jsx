@@ -36,6 +36,7 @@ import WelcomePage from "./Pages/WelcomePage";
 
 import WordCloudPersonPage from "./Pages/WordCloudPersonPage";
 import WordCloudWordPage from "./Pages/WordCloudWordPage";
+import UserEditPage from "./Pages/UserEditPage";
 
 const Error = () =>
     <div>404: Woops! I don't know that path</div>;
@@ -105,10 +106,11 @@ const AppRouting = () => {
                     <Route path="/title/cast/:id" element={<TitleCastPage/>} />
                     <Route path="/title/crew/:id" element={<TitleCrewPage/>} />
                     <Route path="/user/register" element={<RegisterPage/>} />
+                    <Route path="/user/edit" element={<UserEditPage/>} />
                     <Route path="/person/:id" element={<PersonPage/>} />
                     <Route path="/user/bookmarks/create/:id" element={<BookmarksCreatePage/>} />
                     <Route path="/user/bookmarks/delete/:id" element={<BookmarksDeletePage/>} />
-                    <Route path="/user/bookmarks/edit/:id" element={<BookmarksEditPage/>} />
+                    <Route path="/user/bookmarks/edit/:id/:name" element={<BookmarksEditPage/>} />
                     <Route path="/user/history/delete" element={<HistoryDeletePage/>} />
                     <Route path="/user/ratings/delete/:id" element={<RatingsDeletePage/>} />
                     <Route path="/person/wordcloud/:name" element={<WordCloudPersonPage/>} />
