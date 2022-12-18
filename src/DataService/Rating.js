@@ -40,8 +40,7 @@ class Rating {
         const rating = this;
         const base = "https://localhost:5001/api/user/ratings/delete/";
         let url = base + rating.id;
-        console.log("test")
-        console.log(rating.id)
+        console.log(rating.id);
         
         if (token !== null) {
             const requestContent = {

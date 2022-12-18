@@ -23,8 +23,6 @@ const RatingsDeletePage = () => {
                 setRatingDeleted(result);
             };
             DeleteRating(token, id);
-
-            console.log(DeleteRating(token, id));
         }        
         
         if (ratingDeleted === false) {
