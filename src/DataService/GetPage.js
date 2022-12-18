@@ -1,5 +1,3 @@
-// https://localhost:5001/api/search/actors/johan
-
 async function GetPage(token, url, page, pageSize) {
     if (token != null) {
         const requestContent = {
@@ -24,4 +22,53 @@ async function GetPage(token, url, page, pageSize) {
     }
 }
 
-export default GetPage;
+
+async function GetPageNoToken(url, page, pageSize) {
+    if (url != null) {
+        const requestContent = {
+            headers: {
+                "Content-Type": "application/json"
+            },
+        };
+        const pagingUrl = url + "?page=" + page + "&pageSize="+pageSize;
+        try {
+            const res = await fetch(pagingUrl, requestContent);
+            const json = await res.json();
+            return(json);
+
+        } catch (e) {
+            console.log(e);
+            return(null);
+        }
+    } else {
+        return(null);
+    }
+}
+
+async function GetSpecificPageNoToken(url) {
+    if (url != null) {
+        const requestContent = {
+            headers: {
+                "Content-Type": "application/json"
+            },
+        };
+        try {
+            const res = await fetch(url, requestContent);
+            const json = await res.json();
+            return(json);
+
+        } catch (e) {
+            console.log(e);
+            return(null);
+        }
+    } else {
+        return(null);
+    }
+}
+
+export {
+    GetPage,
+    GetSpecificPageNoToken,
+    GetPageNoToken
+}
+// export default GetPage;

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Container from "react-bootstrap/Container";
 import Paging from './Paging';
-import GetPageNoToken from '../DataService/GetPageNoToken';
+import {GetPageNoToken} from '../DataService/GetPage';
 
 
 const PaginationListNoToken = ({ url, setContent}) => {

@@ -16,8 +16,7 @@ const Rating = ({ rating }) => {
             <Col xs={12}>
                 Title : 
                 <br></br>
-                <NavLink to={url} 
-                onClick = { () => window.location.replace(url)}>{rating.title}</NavLink>
+                <NavLink as={Link} to={url}>{rating.title} </NavLink>
                 <br></br>
                 Rating : {rating.rating}
             </Col>
@@ -29,6 +28,7 @@ const Rating = ({ rating }) => {
             <Col md="auto">
                 <Button variant="danger" as={Link} to={"/user/ratings/delete/" + lastSegment}>
                     Delete
+                    {console.log(lastSegment)}
                 </Button>
             </Col>
         </Row>

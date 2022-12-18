@@ -6,7 +6,7 @@ import SearchTitlesList from '../PageComponents/SearchPageComponents/SearchTitle
 import TokenContext from '../Context/TokenContext';
 import { useParams, useNavigate} from "react-router-dom";
 import Paging from '../PageComponents/Paging';
-import GetPage from '../DataService/GetPage';
+import {GetPage} from '../DataService/GetPage';
 
 const SearchPage = () => {
     const token = useContext(TokenContext);

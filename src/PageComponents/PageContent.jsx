@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Container from "react-bootstrap/Container";
 // import Paging from './Paging';
-import GetSpecificPageNoToken from '../DataService/GetSpecificPageNoToken';
+import {GetSpecificPageNoToken} from '../DataService/GetPage';
 
 
 const PageContent = ({ url, setContent}) => {

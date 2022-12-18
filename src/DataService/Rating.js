@@ -13,7 +13,7 @@ class Rating {
             url += "/" + rating.rating;
         }
         
-        if (token != null) {
+        if (token !== null) {
             const requestContent = {
                 method: "POST",
                 headers: {
@@ -40,8 +40,10 @@ class Rating {
         const rating = this;
         const base = "https://localhost:5001/api/user/ratings/delete/";
         let url = base + rating.id;
+        console.log("test")
+        console.log(rating.id)
         
-        if (token != null) {
+        if (token !== null) {
             const requestContent = {
                 method: "DELETE",
                 headers: {

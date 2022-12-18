@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Container from "react-bootstrap/Container";
 import Paging from './Paging';
-import GetPage from '../DataService/GetPage';
+import {GetPage} from '../DataService/GetPage';
 import TokenContext from '../Context/TokenContext';
 
 
