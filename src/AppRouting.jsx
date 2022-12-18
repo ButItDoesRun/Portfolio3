@@ -63,19 +63,20 @@ const AppRouting = () => {
         <>
             <TokenContext.Provider value={token}>
                 { /*navbar*/}
-                <Navbar bg="light" variant="light" expand="lg">
-                    <Container id = "navContainer">
-                        <Nav className="flex-row align-items-center">
-                            <Navbar.Brand id = "logo"  as={Link} to="/home">OurMovieApp</Navbar.Brand>
+                <Navbar bg="dark" variant="dark" expand="lg">
+                    <Container fluid id = "navContainer">
+                        <Nav className="flex-row align-items-center" >
+                            <Navbar.Brand id = "logo"  as={Link} to="/home" >OurMovieApp</Navbar.Brand>
 
                             {(token !== null) ? 
                                 <SearchBar></SearchBar> :
                                 null
                             }
+                     
                          
-                            <NavLink className="btn" to="/titles/movies">Movies</NavLink>
-                            <NavLink className="btn" to="/titles/tvshows">Tv Shows</NavLink>
-                            <NavLink className="btn" to="/persons/actors">Actors</NavLink>
+                            <NavLink className="inactive" activeClassName="active" to="/titles/movies">Movies</NavLink>
+                            <NavLink className="inactive" activeClassName="active" to="/titles/tvshows">Tv Shows</NavLink>
+                            <NavLink className="inactive" activeClassName="active" to="/persons/actors">Actors</NavLink>
                                                  
                             <NavDropdown title="User" id="nav-dropdown">
                                 {(token !== null)?

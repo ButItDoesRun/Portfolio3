@@ -26,7 +26,7 @@ const PaginationListNoToken = ({ url, setContent}) => {
         <Container fluid>
             {(pageList === null) ?
                 <p>Loading...</p> :
-                <Paging pageList={pageList} page={page} maxPageButtons={maxPageButtons} setPage={setPage}></Paging>
+                <Paging id="pag" pageList={pageList} page={page} maxPageButtons={maxPageButtons} setPage={setPage}></Paging>
             }
         </Container>
     );

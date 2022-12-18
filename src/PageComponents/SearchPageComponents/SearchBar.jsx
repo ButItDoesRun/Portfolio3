@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import {NavLink} from "react-router-dom";
 import Form from 'react-bootstrap/Form';
+import Container from "react-bootstrap/Container";
 
 const SearchBar = () => {
     const [searchword, setSearchword] = useState('');
@@ -15,10 +16,18 @@ const SearchBar = () => {
         const e = document.getElementById("categories");
          setCategory(e.options[e.selectedIndex].value);
     };
+    
 
-    const BarStyle = {width:"20rem",background:"#F0F0F0", border:"none", padding:"0.5rem", margin: "1rem"};
+    const BarStyle = 
+    {width:"20rem",
+    background:"#edf3f7", 
+    border:"1rem", 
+    padding:"0.5rem", 
+    margin: "1rem"
+    };
     return (
         <>
+
                 
                 <Form.Select onChange={handleCategory} id = "categories">
                     <option value = "titles">Title</option>
@@ -35,7 +44,7 @@ const SearchBar = () => {
                 />
                     
                
-                <NavLink className="btn" to= {"search/"+ category + "/"+ searchword}>Search</NavLink>
+                <NavLink className="inactive" activeClassName="active" to= {"search/"+ category + "/"+ searchword}>Search</NavLink>
         </>
     );
   }

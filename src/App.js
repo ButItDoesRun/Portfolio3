@@ -8,6 +8,7 @@ import './App.css';
 function App() {
 
   return (
+    document.body.style.background = '#B0C4DE',
     <div className='App' >
         <AppRouting id = "top" />
     </div>

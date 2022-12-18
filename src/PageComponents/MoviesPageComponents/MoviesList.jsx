@@ -10,7 +10,7 @@ const Movie = ({ movie }) => {
     const url = `/title/${lastSegment}`;
     
     return (
-        <Container>
+        <Container fluid id = "movie">
         <Row>
         <Col xs={3}>Title : </Col>
         <Col xs={15}>
@@ -26,7 +26,7 @@ const Movie = ({ movie }) => {
 
 const MoviesList = ({ moviesList }) =>
     <Container fluid id = "movies">
-        <ListGroup>
+        <ListGroup fluid>
             {moviesList?.map(movie =>
                 <ListGroup.Item key={movie.name}>
                     <Movie movie={movie} />
