@@ -22,8 +22,7 @@ const PageContent = ({ url, setContent}) => {
         <Container fluid>
             {(pageContent === null) ?
                 <p>Loading...</p> :
-                console.log("Resource Retrieved!")
-                // <Paging pageList={pageList} page={page} maxPageButtons={maxPageButtons} setPage={setPage}></Paging>
+                null
             }
         </Container>
     );
