@@ -17,7 +17,7 @@ const TvShow = ({ tvshow }) => {
         <Col xs={15}><NavLink as={Link} to={url}>{tvshow.name}</NavLink>
         </Col>
         <Col xs={15}>Airing date : {tvshow.airingDate}</Col>
-        <Col xs={15}>Seasons : {tvshow.tvShowContentList.length}</Col>
+        {/* <Col xs={15}>Seasons : {tvshow.tvShowContentList.length}</Col> */}
         <Col xs={15}>Rating : {tvshow.rating}</Col>
         </Row>
         </Container>

@@ -4,6 +4,7 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import {NavLink, Link, useParams} from "react-router-dom";
 import TokenContext from '../../Context/TokenContext';
+import DirectorList from '../TitlePageComponents/DirectorList';
 
 // Components
 import SeasonsAccordion from './SeasonsAccordion';
@@ -35,6 +36,10 @@ const TvShow = ({ tvShow }) => {
                     null :
                     <p><NavLink as={Link} to={url}>Bookmark Me!</NavLink>
                     </p>}
+                </Tab>
+
+                <Tab eventKey="directors" title="Directors">
+                    <DirectorList directorList={tvShow.directorListWithUrl}></DirectorList>
                 </Tab>
 
                 <Tab eventKey="seasons" title="Seasons">
