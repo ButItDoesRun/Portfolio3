@@ -1,24 +1,28 @@
 import React, { useEffect, useContext, useState } from 'react';
 import Container from "react-bootstrap/Container";
-import PaginationList from '../PageComponents/PaginationList';
 import SearchGenresList from '../PageComponents/SearchPageComponents/SearchGenresList';
 import SearchPersonsList from '../PageComponents/SearchPageComponents/SearchPersonsList';
 import SearchTitlesList from '../PageComponents/SearchPageComponents/SearchTitlesList';
 import TokenContext from '../Context/TokenContext';
 import { useParams, useNavigate} from "react-router-dom";
+import Paging from '../PageComponents/Paging';
+import GetPage from '../DataService/GetPage';
 
 const SearchPage = () => {
-    const { category } = useParams();
-    const { search } = useParams();
-    const [searchContent, setSearchContent] = useState(null);
-    // const [resourceUrl, setResourceUrl] = useState('');
-    const url = `https://localhost:5001/api/search/${category}/${search}`;
-    // let [searchUpdate, searchUpdate = useState(null)];
-
     const token = useContext(TokenContext);
     const navigate = useNavigate();
+    const maxPageButtons = 20;
+    const [page, setPage] = useState(0);
+    const [pageSize, setPageSize] = useState(20);
+    const [pageList, setPageList] = useState(null);
+    const [searchContent, setSearchContent] = useState(null);
+    const { category } = useParams();
+    const { search } = useParams();
+    const url = `https://localhost:5001/api/search/${category}/${search}`;
+
 
     const displaySearchComponent = (searchContent) => {
+      
         if(category === "titles"){
             return (<SearchTitlesList searchTitlesList={searchContent}></SearchTitlesList>);
         }
@@ -30,6 +34,7 @@ const SearchPage = () => {
         if(category === "genres"){
             return(<SearchGenresList searchGenresList={searchContent}></SearchGenresList>);
         }  
+
     };
 
     useEffect(() => {
@@ -38,28 +43,39 @@ const SearchPage = () => {
             alert("Log in to use search feature");
         }
 
-    }, [searchContent]);
+        async function getPageList(token, url, page, pageSize) {
+            if (token !== null){
+                const json = await GetPage(token, url, page, pageSize);
+                setPageList(json);
+                setSearchContent(json.items);             
+            }
+        };
+
+        getPageList(token, url, page, pageSize);
+
+
+    }, [searchContent,page, pageSize]);
 
     return (
         <Container>
-            <p>{search}</p>
-            <p>{category}</p>
-            <p>{url}</p>
+            <Container fluid>
+                {(pageList === null) ?
+                    <p>Loading...</p> :
+                    <Paging pageList={pageList} page={page} maxPageButtons={maxPageButtons} setPage={setPage}></Paging>
+                }
+            </Container>
            
-
-            <PaginationList url={url} setContent={setSearchContent}></PaginationList>
             {(searchContent === null) ?
                 <p>Loading content...</p> :
                 <>
                     {(searchContent.length > 0) ?
-                        displaySearchComponent(searchContent)                
+                        displaySearchComponent(searchContent)     
                     :
                     <p>Search not found</p> 
 
                     }
                 </>                
             }
-            {console.log(searchContent)}
         </Container>
     );
 };

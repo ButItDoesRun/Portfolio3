@@ -33,9 +33,9 @@ const SearchBar = () => {
                 value={searchword}
                 placeholder={"search"}
                 />
-
+                    
+               
                 <NavLink className="btn" to= {"search/"+ category + "/"+ searchword}>Search</NavLink>
-      
         </>
     );
   }

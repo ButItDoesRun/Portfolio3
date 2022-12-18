@@ -34,9 +34,27 @@ import SearchBar from "./PageComponents/SearchPageComponents/SearchBar";
 import RatingsDeletePage from "./Pages/RatingsDeletePage";
 import WelcomePage from "./Pages/WelcomePage";
 
+import WordCloudPersonPage from "./Pages/WordCloudPersonPage";
+import WordCloudWordPage from "./Pages/WordCloudWordPage";
+import UserEditPage from "./Pages/UserEditPage";
+
 
 const Error = () =>
     <div>404: Woops! I don't know that path</div>;
+
+const ShowUserMenu = () => {
+
+    return(
+        <>
+        <NavDropdown.Item as={Link} to="/user">User</NavDropdown.Item>
+        <NavDropdown.Item as={Link} to="/user/bookmarks">Bookmarks</NavDropdown.Item>
+        <NavDropdown.Item as={Link} to="/user/history">History</NavDropdown.Item>
+        <NavDropdown.Item as={Link} to="/user/ratings">Ratings</NavDropdown.Item>
+        <NavDropdown.Divider />
+        </>
+    );
+}
+
 
 const AppRouting = () => {
     let [token, setToken] = useState(null);
@@ -50,21 +68,20 @@ const AppRouting = () => {
                         <Nav className="flex-row align-items-center">
                             <Navbar.Brand id = "logo"  as={Link} to="/home">OurMovieApp</Navbar.Brand>
 
-                            {(token === null) ? 
-                            <NavLink className="btn" 
-                            to="/user/login">Log in to use search feature</NavLink> :
-                            <SearchBar></SearchBar>}
+                            {(token !== null) ? 
+                                <SearchBar></SearchBar> :
+                                null
+                            }
                          
                             <NavLink className="btn" to="/titles/movies">Movies</NavLink>
                             <NavLink className="btn" to="/titles/tvshows">Tv Shows</NavLink>
                             <NavLink className="btn" to="/persons/actors">Actors</NavLink>
                                                  
                             <NavDropdown title="User" id="nav-dropdown">
-                                <NavDropdown.Item as={Link} to="/user">User</NavDropdown.Item>
-                                <NavDropdown.Item as={Link} to="/user/bookmarks">Bookmarks</NavDropdown.Item>
-                                <NavDropdown.Item as={Link} to="/user/history">History</NavDropdown.Item>
-                                <NavDropdown.Item as={Link} to="/user/ratings">Ratings</NavDropdown.Item>
-                                <NavDropdown.Divider />
+                                {(token !== null)?
+                                ShowUserMenu()
+                                : null
+                                }
                                 {(token === null) ? 
                                 <NavDropdown.Item as={Link} to="/user/login">Login</NavDropdown.Item> :
                                 <NavDropdown.Item as={Link} to="/user/logout">Log out</NavDropdown.Item>  }
@@ -103,12 +120,15 @@ const AppRouting = () => {
                     <Route path="/title/cast/:id" element={<TitleCastPage/>} />
                     <Route path="/title/crew/:id" element={<TitleCrewPage/>} />
                     <Route path="/user/register" element={<RegisterPage/>} />
+                    <Route path="/user/edit" element={<UserEditPage/>} />
                     <Route path="/person/:id" element={<PersonPage/>} />
                     <Route path="/user/bookmarks/create/:id" element={<BookmarksCreatePage/>} />
                     <Route path="/user/bookmarks/delete/:id" element={<BookmarksDeletePage/>} />
-                    <Route path="/user/bookmarks/edit/:id" element={<BookmarksEditPage/>} />
+                    <Route path="/user/bookmarks/edit/:id/:name" element={<BookmarksEditPage/>} />
                     <Route path="/user/history/delete" element={<HistoryDeletePage/>} />
                     <Route path="/user/ratings/delete/:id" element={<RatingsDeletePage/>} />
+                    <Route path="/person/wordcloud/:name" element={<WordCloudPersonPage/>} />
+                    <Route path="/wordcloud/:word" element={<WordCloudWordPage/>}/>
                     
 
                     {/* Routing for errors*/}
