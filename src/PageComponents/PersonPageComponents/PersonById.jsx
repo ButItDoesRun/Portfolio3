@@ -4,6 +4,7 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import {NavLink, Link} from "react-router-dom";
 import TokenContext from '../../Context/TokenContext';
+import WordCloudNameButton from '../WordCloudPageComponents/WordCloudNameButton';
 
 // Components
 // import DirectorList from './DirectorList';
@@ -26,10 +27,12 @@ const PersonById = ({ person }) => {
                 <Tab eventKey="facts" title="Facts">
                     <p>Birth Year: {person.birthYear}</p>
                     <p>Death Year: {person.deathYear}</p>
+                    <WordCloudNameButton name={person.name}></WordCloudNameButton>
                     {(token !== null) ? 
                     <p> <NavLink as={Link} to={url}>Bookmark Me!</NavLink>
                     </p> : null
                     }
+
                 </Tab>
 
                 <Tab eventKey="professions" title="Professions">

@@ -3,7 +3,6 @@ import Container from "react-bootstrap/Container";
 import { useParams } from "react-router-dom";
 import PageContent from '../PageComponents/PageContent';
 import PersonById from '../PageComponents/PersonPageComponents/PersonById';
-import WordCloudNameButton from '../PageComponents/WordCloudPageComponents/WordCloudNameButton';
 
 const PersonPage = () => {
     let [personContent, setPersonContent] = useState(null);
@@ -22,7 +21,6 @@ const PersonPage = () => {
                 <p>Loading content...</p> :
                 <>
                     <PersonById person={personContent}></PersonById>
-                    <WordCloudNameButton name={personContent.name}></WordCloudNameButton>
                 </>
             }
         </Container>
