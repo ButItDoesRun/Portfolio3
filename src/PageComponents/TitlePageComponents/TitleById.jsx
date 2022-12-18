@@ -19,7 +19,7 @@ const TitleById = ({ title }) => {
         <Container fluid>
             <h2>{title.title}</h2> 
             {(token === null) ? 
-                console.log("rating is hidden")
+                null
                :
                 <RatingComponent id = "myRating"></RatingComponent>}
             <Tabs
@@ -33,7 +33,7 @@ const TitleById = ({ title }) => {
                     <p>Runtime: {title.runtime}</p>
                     <p>Rating: {title.rating}</p>
                     {(token === null) ? 
-                            console.log("rating is hidden") :
+                            null :
                             <NavLink as={Link} to={url}>Bookmark Me!</NavLink> }              
                 </Tab>
 

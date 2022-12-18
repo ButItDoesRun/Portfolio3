@@ -20,7 +20,7 @@ const TvShow = ({ tvShow }) => {
         <Container fluid>
             <h2>{tvShow.name}</h2>
             {(token === null) ? 
-                console.log("rating is hidden") :
+                null :
                 <RatingComponent id = "myRating"></RatingComponent> }  
             <Tabs
                 defaultActiveKey="facts"
@@ -32,7 +32,7 @@ const TvShow = ({ tvShow }) => {
                     <p>Airing Date: {tvShow.airingDate}</p>
 
                     {(token === null) ? 
-                    console.log("bookmarking is hidden") :
+                    null :
                     <p><NavLink as={Link} to={url}>Bookmark Me!</NavLink>
                     </p>}
                 </Tab>
