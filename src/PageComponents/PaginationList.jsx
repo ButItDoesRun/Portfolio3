@@ -7,7 +7,7 @@ import TokenContext from '../Context/TokenContext';
 
 const PaginationList = ({ url, setContent}) => {
     const token = useContext(TokenContext);
-    const maxPageButtons = 20;
+    const maxPageButtons = 10;
     let [page, setPage] = useState(0);
     let [pageSize, setPageSize] = useState(20);
     let [pageList, setPageList] = useState(null);

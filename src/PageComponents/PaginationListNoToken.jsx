@@ -5,7 +5,7 @@ import {GetPageNoToken} from '../DataService/GetPage';
 
 
 const PaginationListNoToken = ({ url, setContent}) => {
-    const maxPageButtons = 20;
+    const maxPageButtons = 10;
     let [page, setPage] = useState(0);
     let [pageSize, setPageSize] = useState(20);
     let [pageList, setPageList] = useState(null);
