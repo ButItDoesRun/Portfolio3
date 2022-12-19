@@ -14,10 +14,23 @@ import Col from 'react-bootstrap/Col';
 //page imports
 import LoginPage from './Pages/LoginPage';
 import LogoutPage from "./Pages/LogoutPage";
-import UserPage from "./Pages/UserPage";
-import BookmarksPage from './Pages/BookmarksPage';
 import RegisterPage from "./Pages/RegisterPage";
+
+import UserPage from "./Pages/UserPage";
+import UserEditPage from "./Pages/UserEditPage";
+import UserDeletePage from "./Pages/UserDeletePage";
+
+import BookmarksPage from './Pages/BookmarksPage';
+import BookmarksCreatePage from "./Pages/BookmarksCreatePage";
+import BookmarksDeletePage from "./Pages/BookmarksDeletePage";
+import BookmarksEditPage from "./Pages/BookmarksEditPage";
+
 import HistoryPage from "./Pages/HistoryPage";
+import HistoryDeletePage from "./Pages/HistoryDeletePage";
+
+import RatingsPage from "./Pages/RatingsPage";
+import RatingsDeletePage from "./Pages/RatingsDeletePage";
+
 import MoviesPage from "./Pages/MoviesPage";
 import TvShowsPage from "./Pages/TvShowsPage";
 import ActorsPage from "./Pages/ActorsPage";
@@ -26,19 +39,14 @@ import TvShowPage from "./Pages/TvShowPage";
 import PersonPage from "./Pages/PersonPage";
 import TitleCastPage from "./Pages/TitleCastPage";
 import TitleCrewPage from "./Pages/TitleCrewPage";
-import RatingsPage from "./Pages/RatingsPage";
-import BookmarksCreatePage from "./Pages/BookmarksCreatePage";
-import BookmarksDeletePage from "./Pages/BookmarksDeletePage";
-import BookmarksEditPage from "./Pages/BookmarksEditPage";
-import HistoryDeletePage from "./Pages/HistoryDeletePage";
+
 import SearchPage from "./Pages/SearchPage";
 import SearchBar from "./PageComponents/SearchPageComponents/SearchBar";
-import RatingsDeletePage from "./Pages/RatingsDeletePage";
+
 import WelcomePage from "./Pages/WelcomePage";
 
 import WordCloudPersonPage from "./Pages/WordCloudPersonPage";
 import WordCloudWordPage from "./Pages/WordCloudWordPage";
-import UserEditPage from "./Pages/UserEditPage";
 
 
 const Error = () =>
@@ -138,6 +146,7 @@ const AppRouting = () => {
 
 
                     {/* Routing for other components */}
+                    <Route path="/user/delete" element={<UserDeletePage/>} />
                     <Route path="/search/:category/:search" element={<SearchPage/> } />                    
                     <Route path="/title/:id" element={<TitlePage/>} />
                     <Route path="/title/tvshow/:id" element={<TvShowPage/>} />
