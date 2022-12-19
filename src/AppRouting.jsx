@@ -70,7 +70,7 @@ const AppRouting = () => {
                         <Nav>
                             <Row>
 
-                            <Col sm ={4}> 
+                            <Col md = "auto"> 
                                 <Navbar.Brand  as={Link} to="/home" >OurMovieApp</Navbar.Brand>
                             </Col>
 
@@ -78,26 +78,26 @@ const AppRouting = () => {
                                                      
 
                             {(token !== null) ? 
-                                <Col xs={7}>  
+                                <Col md = "auto">  
                                 <SearchBar></SearchBar>
                                 </Col>  :
                                 null
                             }
                             
                      
-                            <Col sm={2}> 
+                            <Col md = "auto"> 
                             <NavLink className="inactive" activeClassName="active" to="/titles/movies">Movies</NavLink>
                             </Col> 
                             
-                            <Col sm={2}> 
+                            <Col md = "auto"> 
                             <NavLink className="inactive" activeClassName="active" to="/titles/tvshows">TvShows</NavLink>
                             </Col> 
 
-                            <Col sm={2}> 
+                            <Col md = "auto"> 
                             <NavLink className="inactive" activeClassName="active" to="/persons/actors">Actors</NavLink>
                             </Col>  
 
-                            <Col sm={2}> 
+                            <Col md = "auto"> 
                             <NavDropdown title="User" id="nav-dropdown">
                                 {(token !== null)?
                                 ShowUserMenu()
