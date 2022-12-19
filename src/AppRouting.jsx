@@ -8,6 +8,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import Container from "react-bootstrap/Container";
 import TokenContext from './Context/TokenContext';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 //page imports
 import LoginPage from './Pages/LoginPage';
@@ -63,21 +65,39 @@ const AppRouting = () => {
         <>
             <TokenContext.Provider value={token}>
                 { /*navbar*/}
-                <Navbar bg="dark" variant="dark" expand="lg">
+                <Navbar bg="dark" variant="dark">
                     <Container fluid id = "navContainer">
-                        <Nav className="flex-row align-items-center" >
-                            <Navbar.Brand id = "logo"  as={Link} to="/home" >OurMovieApp</Navbar.Brand>
+                        <Nav>
+                            <Row>
+
+                            <Col sm ={4}> 
+                                <Navbar.Brand  as={Link} to="/home" >OurMovieApp</Navbar.Brand>
+                            </Col>
+
+
+                                                     
 
                             {(token !== null) ? 
-                                <SearchBar></SearchBar> :
+                                <Col xs={7}>  
+                                <SearchBar></SearchBar>
+                                </Col>  :
                                 null
                             }
+                            
                      
-                         
+                            <Col sm={2}> 
                             <NavLink className="inactive" activeClassName="active" to="/titles/movies">Movies</NavLink>
-                            <NavLink className="inactive" activeClassName="active" to="/titles/tvshows">Tv Shows</NavLink>
+                            </Col> 
+                            
+                            <Col sm={2}> 
+                            <NavLink className="inactive" activeClassName="active" to="/titles/tvshows">TvShows</NavLink>
+                            </Col> 
+
+                            <Col sm={2}> 
                             <NavLink className="inactive" activeClassName="active" to="/persons/actors">Actors</NavLink>
-                                                 
+                            </Col>  
+
+                            <Col sm={2}> 
                             <NavDropdown title="User" id="nav-dropdown">
                                 {(token !== null)?
                                 ShowUserMenu()
@@ -88,6 +108,9 @@ const AppRouting = () => {
                                 <NavDropdown.Item as={Link} to="/user/logout">Log out</NavDropdown.Item>  }
                                              
                             </NavDropdown>
+                            </Col> 
+
+                            </Row>
                         </Nav>
                     </Container>
                 </Navbar>
