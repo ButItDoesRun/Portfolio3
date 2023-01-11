@@ -1,11 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Container from "react-bootstrap/Container";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Paging from './Paging';
-import {GetPage} from '../DataService/GetPage';
+import PageSizeSelector from './PageSizeSelector';
+import { GetPage } from '../DataService/GetPage';
 import TokenContext from '../Context/TokenContext';
 
-
-const PaginationList = ({ url, setContent}) => {
+const PaginationList = ({ url, setContent }) => {
     const token = useContext(TokenContext);
     const maxPageButtons = 10;
     let [page, setPage] = useState(0);
@@ -14,10 +16,10 @@ const PaginationList = ({ url, setContent}) => {
 
     useEffect(() => {
         async function getPageList(token, url, page, pageSize) {
-            if (token !== null){
+            if (token !== null) {
                 const json = await GetPage(token, url, page, pageSize);
                 setPageList(json);
-                setContent(json.items);                
+                setContent(json.items);
             }
         };
         setContent(null);
@@ -28,7 +30,16 @@ const PaginationList = ({ url, setContent}) => {
         <Container fluid>
             {(pageList === null) ?
                 <p>Loading...</p> :
-                <Paging pageList={pageList} page={page} maxPageButtons={maxPageButtons} setPage={setPage}></Paging>
+                <>
+                    <Row>
+                        <Col>
+                            <Paging pageList={pageList} page={page} maxPageButtons={maxPageButtons} setPage={setPage}></Paging>
+                        </Col>
+                        <Col>
+                            <PageSizeSelector pageSize={pageSize} setPageSize={setPageSize}></PageSizeSelector>
+                        </Col>
+                    </Row>
+                </>
             }
         </Container>
     );

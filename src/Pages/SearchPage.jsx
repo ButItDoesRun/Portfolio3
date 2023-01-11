@@ -1,11 +1,14 @@
 import React, { useEffect, useContext, useState } from 'react';
 import Container from "react-bootstrap/Container";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Paging from '../PageComponents/Paging';
+import PageSizeSelector from '../PageComponents/PageSizeSelector';
 import SearchGenresList from '../PageComponents/SearchPageComponents/SearchGenresList';
 import SearchPersonsList from '../PageComponents/SearchPageComponents/SearchPersonsList';
 import SearchTitlesList from '../PageComponents/SearchPageComponents/SearchTitlesList';
 import TokenContext from '../Context/TokenContext';
 import { useParams, useNavigate} from "react-router-dom";
-import Paging from '../PageComponents/Paging';
 import {GetPage} from '../DataService/GetPage';
 
 const SearchPage = () => {
@@ -61,7 +64,15 @@ const SearchPage = () => {
             <Container fluid>
                 {(pageList === null) ?
                     <p>Loading...</p> :
-                    <Paging pageList={pageList} page={page} maxPageButtons={maxPageButtons} setPage={setPage}></Paging>
+                    <Row>
+                    <Col>
+                        <Paging pageList={pageList} page={page} maxPageButtons={maxPageButtons} setPage={setPage}></Paging>
+                    </Col>
+                    <Col>
+                        <PageSizeSelector pageSize={pageSize} setPageSize={setPageSize}></PageSizeSelector>
+                    </Col>                
+                </Row>
+                    
                 }
             </Container>
            

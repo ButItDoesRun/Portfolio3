@@ -1,6 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Container from "react-bootstrap/Container";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Paging from './Paging';
+import PageSizeSelector from './PageSizeSelector';
 import {GetPageNoToken} from '../DataService/GetPage';
 
 
@@ -26,7 +29,14 @@ const PaginationListNoToken = ({ url, setContent}) => {
         <Container fluid>
             {(pageList === null) ?
                 <p>Loading...</p> :
-                <Paging id="pag" pageList={pageList} page={page} maxPageButtons={maxPageButtons} setPage={setPage}></Paging>
+                <Row>
+                    <Col>
+                        <Paging id="pag" pageList={pageList} page={page} maxPageButtons={maxPageButtons} setPage={setPage}></Paging>
+                    </Col>
+                    <Col>
+                        <PageSizeSelector pageSize={pageSize} setPageSize={setPageSize}></PageSizeSelector>
+                    </Col>                
+                </Row>
             }
         </Container>
     );
