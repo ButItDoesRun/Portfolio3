@@ -5,13 +5,6 @@
   background-size:cover;
 }
 
-/* .div{
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  z-index: 99;
-} */
-
 
 .container {
   background-color: #def3ff;
@@ -26,55 +19,12 @@
   
 }
 
-/* .nav.navbar.navbar-expand.navbar-dark.bg-dark{
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  z-index: 99;
-} */
-
-/* #navContainer{
-  width:100%;
-  flex-direction: row;
-  justify-content: center;
-  display: inline-block;
-  background: #242320;
-} */
-
-/* #navbar.nav{
-  position: absolute;
-  flex-direction: row;
-  height: 100%;
-  width: 100%;
-  z-index: 99;
-
-} */
 
 .div.row{
   width: 100%;
 
 }
 
-
-/* .div.navbar-nav{
-  position: absolute;
-  flex-direction: row;
-  height: 100%;
-  width: 100%;
-}  */
-
-/* .div.col{
-  position: absolute;
-  flex-direction: row;
-  height: 100%;
-  width: 100%;
-  z-index: 99;
-} */
-
-/* #nav li {
-  display: inline;
-  padding-right: 30px;
-} */
 
 #movie{
   background: #def3ff;
@@ -90,29 +40,11 @@
   border-radius: 30px 30px 30px 30px;
 }
 
-/* #movies{
-  background: #def3ff;
-
-} */
-
-/* #list-group{
-  background: #c8defa;
-} */
 
 .list-group-item{
   background: #c8defa;
   border-radius: 30px 30px 30px 30px;
 }
-
-/* .navbar { 
-  flex-direction: row;
-  display: inline-block;
-  align-items : center;
-  width: max-content;
-  height: max-content;
-  border-radius: 30px 30px 30px 30px;
- 
-} */
 
 #categories{
   size : sm;

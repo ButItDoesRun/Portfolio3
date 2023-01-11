@@ -150,8 +150,6 @@ const AppRouting = () => {
                     <Route path="/search/:category/:search" element={<SearchPage/> } />                    
                     <Route path="/title/:id" element={<TitlePage/>} />
                     <Route path="/title/tvshow/:id" element={<TvShowPage/>} />
-                    <Route path="/title/cast/:id" element={<TitleCastPage/>} />
-                    <Route path="/title/crew/:id" element={<TitleCrewPage/>} />
                     <Route path="/user/register" element={<RegisterPage/>} />
                     <Route path="/user/edit" element={<UserEditPage/>} />
                     <Route path="/person/:id" element={<PersonPage/>} />
