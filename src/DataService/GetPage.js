@@ -6,7 +6,9 @@ async function GetPage(token, url, page, pageSize) {
                 "Authorization": "Bearer " + token,
             },
         };
-        
+        if (pageSize === ""){
+            pageSize = 20;
+        }
         const pagingUrl = url + "?page=" + page + "&pageSize="+pageSize;
         try {
             const res = await fetch(pagingUrl, requestContent);
@@ -30,6 +32,9 @@ async function GetPageNoToken(url, page, pageSize) {
                 "Content-Type": "application/json"
             },
         };
+        if (pageSize === ""){
+            pageSize = 20;
+        }
         const pagingUrl = url + "?page=" + page + "&pageSize="+pageSize;
         try {
             const res = await fetch(pagingUrl, requestContent);
